@@ -1,17 +1,179 @@
-/* Error: expected ";".
- *     ,
- * 118 |         font-size: 14px;
- *     |                  ^
- *     '
- *   style1C.scss 118:18  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected ";".\a     \2577 \a 118 \2502          font-size: 14px;\d\a     \2502                   ^\a     \2575 \a   style1C.scss 118:18  root stylesheet';
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.header_box {
+  background-image: url(./imgs/Background.png);
+  background-repeat: no-repeat;
+  width: 1440px;
+  height: 700px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-family: serif;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.nav_list {
+  display: flex;
+}
+
+/* width: 90px;
+height: 36px;
+border: #ffff solid 2px; */
+.Log_in {
+  width: 90px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.Sing_up {
+  width: 90px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+}
+
+.Logo {
+  text-transform: uppercase;
+  width: 152px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  margin-top: 6px;
+  font: 20px bold "Montserrat" arial;
+}
+
+.hero {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero_title {
+  width: 470px;
+  height: 126px;
+  text-transform: uppercase;
+  font: 52px bold arial;
+}
+
+@media (max-width: 1440px) {
+  header {
+    background-color: rgb(42, 18, 31);
+  }
+}
+@media (max-width: 768px) {
+  header {
+    background-color: rgb(138, 28, 88);
+  }
+}
+@media (max-width: 318px) {
+  header {
+    background-color: rgb(243, 20, 146);
+  }
+}
+
+/*# sourceMappingURL=style1C.css.map */
