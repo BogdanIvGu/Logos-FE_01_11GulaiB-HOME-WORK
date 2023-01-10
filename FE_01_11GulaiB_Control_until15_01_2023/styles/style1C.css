@@ -99,6 +99,7 @@ ul {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 * {
@@ -106,6 +107,21 @@ a {
   user-select: none;
 }
 
+@media (max-width: 1440px) {
+  header {
+    background-color: rgb(42, 18, 31);
+  }
+}
+@media (max-width: 768px) {
+  header {
+    background-color: rgb(138, 28, 88);
+  }
+}
+@media (max-width: 318px) {
+  header {
+    background-color: rgb(243, 20, 146);
+  }
+}
 .header_box {
   background-image: url(./imgs/Background.png);
   opacity: 0.85;
@@ -113,6 +129,8 @@ a {
   height: 700px;
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nav {
@@ -150,6 +168,7 @@ border: #ffff solid 2px; */
 .Log_in:hover {
   border: 3px solid white;
   border-radius: 18px;
+  box-sizing: border-box;
   cursor: pointer;
 }
 
@@ -163,7 +182,22 @@ border: #ffff solid 2px; */
 .Sing_up:hover {
   border: 3px solid white;
   border-radius: 18px;
+  box-sizing: border-box;
   cursor: pointer;
+}
+
+.Sing_up:active {
+  border: 3px solid white;
+  border-radius: 18px;
+  cursor: pointer;
+  background-color: #FF4E50;
+}
+
+.Log_in:active {
+  border: 3px solid white;
+  border-radius: 18px;
+  cursor: pointer;
+  background-color: #FF4E50;
 }
 
 .Logo {
@@ -181,9 +215,9 @@ border: #ffff solid 2px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  top: 223.5px;
-  left: 485px;
+  margin-top: 147.5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero_title {
@@ -245,7 +279,7 @@ border: #ffff solid 2px; */
   animation: glowing 20s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 .glow-on-hover:active {
@@ -269,7 +303,7 @@ border: #ffff solid 2px; */
   background: #FF4E50;
   left: 0;
   top: 0;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 @keyframes glowing {
@@ -283,20 +317,400 @@ border: #ffff solid 2px; */
     background-position: 0 0;
   }
 }
-@media (max-width: 1440px) {
-  header {
-    background-color: rgb(42, 18, 31);
-  }
+.HowDreamWorks {
+  margin-top: 95px;
 }
-@media (max-width: 768px) {
-  header {
-    background-color: rgb(138, 28, 88);
-  }
+
+.title_HowDreamWorks {
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
+  text-align: center;
+  height: 32px;
 }
-@media (max-width: 318px) {
-  header {
-    background-color: rgb(243, 20, 146);
-  }
+
+.list_drems {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list_drem {
+  border-radius: 5px;
+  background-color: black;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.drem_item1 {
+  background-image: "./imgs/Step1.png";
+  margin: 0 10px;
+}
+
+.drem_item2 {
+  background-image: "./imgs/Step2.png";
+}
+
+.drem_item3 {
+  background-image: "./imgs/Step3.png";
+  margin: 0 10px;
+}
+
+.button_step {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: white;
+  background-color: #FF4E50;
+  border-radius: 10px;
+  width: 42px;
+  height: 12px;
+  padding: 5px 14px 3px 14px;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.name_dream {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26px;
+  color: white;
+  width: 250px;
+  margin-left: 25px;
+}
+
+.name_dream1 {
+  margin-top: 15px;
+}
+
+.name_dream2 {
+  margin: 14px 25px 0 25px;
+}
+
+.name_dream {
+  margin-top: 15px;
+}
+
+.description_drem {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #E3E3E3;
+  width: 250px;
+  padding-top: 15px;
+  margin: 10px 25px 21px 25px;
+  text-align: down;
+}
+
+.meet_partner {
+  width: 941px;
+  height: 361px;
+  background-color: #ffffff;
+  margin-top: 95px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.title_meet_partner {
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
+  text-align: center;
+}
+
+.meet_partner_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.partner_item {
+  width: 221px;
+  height: 225px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.partner1 {
+  position: relative;
+}
+
+.partner1::after {
+  content: "";
+  background-image: "./imgs/music2.jpg";
+  background-color: #ff4e50;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  top: 80px;
+  left: 130px;
+  border: white 5px solid;
+}
+
+.photo_partner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name_partner {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  text-align: center;
+  margin-top: 17px;
+  margin-bottom: 12px;
+}
+
+.partner_discription {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #666666;
+  padding-top: 29px;
+  text-align: center;
+}
+
+.buttom_purtner {
+  width: 137px;
+  height: 17px;
+  margin-top: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: 2px solid #ff4e50;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FF4E50;
+  padding: 12px 19px 12px 24px;
+}
+
+.buttom_purtner:hover {
+  background-color: #FF4E50;
+  color: #ffffff;
+}
+
+.Discover_holiday {
+  width: 940px;
+  height: 1041px;
+  margin-top: 95px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title_discover_holiday {
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
+  text-align: center;
+}
+
+.photo_holiday {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.photo_hol_act_idea {
+  position: relative;
+}
+
+.name_of_activity {
+  position: absolute;
+  margin: auto;
+}
+
+.title_create_holiday {
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
+  text-align: center;
+  margin-top: 89px;
+}
+
+.create_holiday_discription {
+  text-align: center;
+  margin-top: 43px;
+  padding-top: 10px;
+  font-family: "Roboto", sans-serif;
+  font-style: Normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 14px;
+  color: #666666;
+}
+
+.inputbutton {
+  display: flex;
+  width: 482px;
+  height: 40px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input_interests {
+  width: 299px;
+  height: 40px;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #d4d4d4;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+  border-radius: 3px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
+  margin-right: 10px;
+}
+
+.input_interests:hover {
+  border: #FF4E50 2px solid;
+}
+
+.buttom_interest {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+  border: none;
+  background-color: #FF4E50;
+  border-radius: 20px;
+  width: 172px;
+  height: 100%;
+}
+
+.footer {
+  width: 1440px;
+  height: 224px;
+  border-top: #FF4E50 solid 4px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.footer_box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.Logo_DreamShare {
+  text-transform: uppercase;
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FF4E50;
+  width: 241px;
+}
+
+.Company_info {
+  width: 239px;
+}
+
+.title_company_info, .title_partners {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  color: #444444;
+}
+
+.company_info_list {
+  margin-top: 11px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 36px;
+  color: #999999;
+  height: 156px;
+}
+
+.info_item:hover {
+  color: #444444;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.Partners {
+  width: 351px;
+}
+
+.Logo_company {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.Designed {
+  text-transform: uppercase;
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  color: #CCCCCC;
+  letter-spacing: 1px;
+}
+
+.img_Logo_company {
+  width: 110px;
+  height: 24px;
+  margin-top: 7px;
 }
 
 /*# sourceMappingURL=style1C.css.map */
