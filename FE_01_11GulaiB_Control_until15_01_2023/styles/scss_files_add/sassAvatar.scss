@@ -1,0 +1,19 @@
+.partner2 {
+    position: relative;
+}
+
+.partner2::after {
+    content: "";
+    background-image: url(/styles/imgs/brush.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #19D4CA;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    top: 83px;
+    left: 134px;
+    border: white 5px solid;
+}

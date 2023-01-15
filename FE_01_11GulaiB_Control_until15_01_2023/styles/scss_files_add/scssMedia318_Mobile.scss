@@ -1,0 +1,306 @@
+// мінімальний екран
+
+@media (max-width: 318px) {
+  header {
+    background-color: rgb(255, 2, 145);
+  }
+
+  .body {
+    max-width: 320px;
+    box-shadow: rgba(58, 244, 6, 0.56) 0px 22px 70px 4px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header_box {
+    background-image: url(/styles/imgs/Background318.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 318px;
+    height: 540px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 17px;
+  }
+
+  .nav_list {
+    width: 153px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Log_in {
+  }
+
+  .Sing_up {
+    line-height: 36px;
+  }
+
+  .Logo {
+    width: 152px;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 97px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero {
+    margin-top: 26.5px;
+  }
+
+  .hero_title {
+    width: 272px;
+    height: 74px;
+    font-size: 30px;
+    line-height: 37px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hearo_discrip {
+    width: 280px;
+    height: 49px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 5.5px;
+  }
+
+  .hero_button {
+    line-height: 40px;
+    width: 280px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .HowDreamWorks {
+    margin-top: 35px;
+  }
+
+  .list_drems {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .list_drem {
+    max-width: 300px;
+    max-height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+
+  .name_dream {
+    line-height: 14px;
+    margin-left: 20px;
+  }
+
+  .name_dream1 {
+    padding-top: 30px;
+  }
+
+  .name_dream2 {
+    width: 168px;
+  }
+
+  .description_drem {
+    width: 250px;
+  }
+
+  // Контент Блок2 АВАТАРИ
+
+  .meet_partner {
+    margin-top: 36px;
+    // position: relative;
+  }
+
+  .meet_partner_list {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(1, 221px);
+    grid-gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .partner3 {
+    min-width: 236px;
+    height: 224px;
+  }
+
+// Блок 3 Discover_holiday
+
+
+.Discover_holiday {
+    width: 318px;
+margin-top: 35px;
+
+}
+
+.title_discover_holiday {
+
+}
+.photo_holiday {
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.photo_hol {
+width: 300px;
+height: 120px;
+}
+
+.act_idea1 {
+    background-image: url(/styles/imgs/Sport318.png);
+
+}
+
+.act_idea2 {
+    background-image: url(/styles/imgs/Healath318.png);
+
+}
+
+.act_idea3 {
+    background-image: url(./imgs/Extreme318.png);
+
+}
+
+.act_idea4 {
+    background-image: url(./imgs/Games318.png);
+
+}
+
+.act_idea5 {
+    background-image: url(./imgs/Culture318.png);
+
+}
+
+.act_idea6 {
+    background-image: url(/styles/imgs/Culture318Copy.png);
+
+}
+
+.act_idea7 {
+    background-image: url(/styles/imgs/GamesCopy318.png);
+
+}
+
+
+  // Блок 4 Create_holiday
+
+  .Create_holiday {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .create_holiday_discription {
+    margin-top: 9px;
+  }
+.title_create_holiday {
+    margin-top: 35px;
+}
+  .inputbutton {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 90px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input_interests {
+    width: 280px;
+    height: 40px;
+  }
+
+  .buttom_interest {
+    margin-top: 10px;
+    width: 280px;
+    height: 40px;
+  }
+
+  // Footer
+
+  .footer {
+    width: 320px;
+    border-top: #ff4e50 solid 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+
+  .footer_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .Logo_DreamShare {
+    margin-top: 19px;
+    margin-bottom: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 119px;
+    height: 20px;
+  }
+
+  .title_company_info {
+width: 320px;
+text-align: center;
+  }
+
+  .company_info_list {
+    display: flex;
+    justify-content: center;
+    line-height: 26px;
+    text-align: center;
+    width: 320px;
+    height: 52px;
+    flex-wrap: wrap;
+    margin-top: 1px;
+  }
+
+  .info_item {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .Partners {
+    width: 320px;
+    height: 17px;
+    text-align: center;
+  }
+
+  .title_partners{
+    margin-top: 6px;
+  }
+.Designed {
+    margin-top: 14px;
+}
+  .Logo_company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  // .Logo {display: none;}
+}

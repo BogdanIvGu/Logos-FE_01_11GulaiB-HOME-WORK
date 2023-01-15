@@ -1,41 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sono:wght@400;500&display=swap");
-@import "./scss_files_add/resetCSS";
-@import "./scss_files_add/scssColor";
-@import "./scss_files_add/scssMedia";
+@import "./scss_files_add/resetCSS.scss";
 
-@mixin TextPR(
-  $font-family,
-  $font-style,
-  $font-weight,
-  $font-size,
-  $line-height,
-  $font-color
-) {
-  font-family: $font-family;
-  font-style: $font-style;
-  font-weight: $font-weight;
-  font-size: $font-size;
-  line-height: $line-height;
-  color: $font-color;
+.body {
+  max-width: 1440px;
+  height: 3551px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-// .body {
-//   width: 1440px;
-//   height: 3451px;
-//   border: 2px solid;
-// }
 
 .header_box {
   background-image: url(./imgs/Background.png);
-  // прозорість беграунда
-  opacity: 0.85;
-  // opacity
-
-  width: 1440px;
+  opacity: 0.95;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 700px;
   display: flex;
   flex-direction: column;
-  // position: relative;
   margin-left: auto;
   margin-right: auto;
 }
@@ -44,19 +25,24 @@
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
-  @include TextPR($Mono, normal, 700, 20px, 1.2, $text-white-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  color: white;
 }
 
 .nav_list {
   display: flex;
-  @include TextPR($Mono, normal, 400, 14px, -height, -$text-white-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
 }
-
-// .nav_list_item {
 /* width: 90px;
 height: 36px;
 border: #ffff solid 2px; */
-
 .Log_in {
   width: 90px;
   height: 36px;
@@ -65,7 +51,7 @@ border: #ffff solid 2px; */
 }
 
 .Log_in:hover {
-  border: 3px solid $text-white-color;
+  border: 3px solid white;
   border-radius: 18px;
   box-sizing: border-box;
   cursor: pointer;
@@ -79,24 +65,24 @@ border: #ffff solid 2px; */
 }
 
 .Sing_up:hover {
-  border: 3px solid $text-white-color;
+  border: 3px solid white;
   border-radius: 18px;
   box-sizing: border-box;
   cursor: pointer;
 }
 
 .Sing_up:active {
-  border: 3px solid $text-white-color;
+  border: 3px solid white;
   border-radius: 18px;
   cursor: pointer;
-  background-color: $buttom-color;
+  background-color: #FF4E50;
 }
 
 .Log_in:active {
-  border: 3px solid $text-white-color;
+  border: 3px solid white;
   border-radius: 18px;
   cursor: pointer;
-  background-color: $buttom-color;
+  background-color: #FF4E50;
 }
 
 .Logo {
@@ -114,9 +100,6 @@ border: #ffff solid 2px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // position: absolute;
-  // top: 223.5px;
-  // left: 485px;
   margin-top: 147.5px;
   margin-left: auto;
   margin-right: auto;
@@ -126,17 +109,32 @@ border: #ffff solid 2px; */
   width: 470px;
   height: 126px;
   text-transform: uppercase;
-  @include TextPR($Mono, Normal, 700, 52px, 1.2, $text-white-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.2;
+  color: white;
 }
 
 .hearo_discrip {
-  @include TextPR($Robo, normal, 300, 24px, 24px, $text-white-gray-color);
+  font-family: "$Robo", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 24px;
+  color: #F7F3F2;
   margin-top: 28.5px;
 }
 
 .hero_button {
-  @include TextPR($Mono, normal, 700, 14px, 40px, $text-white-color);
-  background-color: $buttom-color;
+  font-family: "$Mono", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
+  background-color: #FF4E50;
   border-radius: 20px;
   width: 225px;
   height: 40px;
@@ -145,9 +143,8 @@ border: #ffff solid 2px; */
   margin-right: auto;
 }
 
-// ЕФЕКТ НА КНОПКУ
 .glow-on-hover {
-  background: $buttom-color;
+  background: #FF4E50;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -155,18 +152,7 @@ border: #ffff solid 2px; */
 
 .glow-on-hover:before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -182,7 +168,7 @@ border: #ffff solid 2px; */
 }
 
 .glow-on-hover:active {
-  color: $buttom-color;
+  color: #FF4E50;
 }
 
 .glow-on-hover:active:after {
@@ -199,7 +185,7 @@ border: #ffff solid 2px; */
   position: absolute;
   width: 100%;
   height: 100%;
-  background: $buttom-color;
+  background: #FF4E50;
   left: 0;
   top: 0;
   border-radius: 20px;
@@ -209,29 +195,24 @@ border: #ffff solid 2px; */
   0% {
     background-position: 0 0;
   }
-
   50% {
     background-position: 400% 0;
   }
-
   100% {
     background-position: 0 0;
   }
 }
-
-// КІНЕЦЬ ЕФЕКТУ НА КНОПКУ
-
-// Контент Блок1
-
-.main_content {
-}
-
 .HowDreamWorks {
   margin-top: 95px;
 }
 
 .title_HowDreamWorks {
-  @include TextPR($Mono, Normal, 700, 26px, 32px, #444444);
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
   text-align: center;
   height: 32px;
 }
@@ -245,31 +226,37 @@ border: #ffff solid 2px; */
 
 .list_drem {
   border-radius: 5px;
-  background-color: black;
+//   background-color: black;
+//   background-repeat: no-repeat;
+// background-position: center;
   width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  margin: 0 10px;
 }
 
 .drem_item1 {
-  background-image: "./imgs/Step1.png";
-  margin: 0 10px;
+  background-image: url(./imgs/Step1image.png);
 }
 
 .drem_item2 {
-  background-image: "./imgs/Step2.png";
+  background-image: url(./imgs/Step2image.png);
 }
 
 .drem_item3 {
-  background-image: "./imgs/Step3.png";
-  margin: 0 10px;
+  background-image: url(./imgs/Step3image.png);
 }
 
 .button_step {
-  @include TextPR($Mono, normal, 400, 10px, 12px, $text-white-color);
-  background-color: $buttom-color;
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: white;
+  background-color: #FF4E50;
   border-radius: 10px;
   width: 42px;
   height: 12px;
@@ -279,9 +266,15 @@ border: #ffff solid 2px; */
 }
 
 .name_dream {
-  @include TextPR($Mono, normal, 700, 24px, 26px, $text-white-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26px;
+  color: white;
   width: 250px;
   margin-left: 25px;
+  margin-top: 15px;
 }
 
 .name_dream1 {
@@ -292,24 +285,25 @@ border: #ffff solid 2px; */
   margin: 14px 25px 0 25px;
 }
 
-.name_dream {
-  margin-top: 15px;
-}
 
 .description_drem {
-  @include TextPR($Robo, normal, 400, 14px, 14px, $text-white-gray-color);
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #E3E3E3;
   width: 250px;
   padding-top: 15px;
-  // height: 57px;
   margin: 10px 25px 21px 25px;
   text-align: down;
 }
 
-// Контент Блок2
+//  Контент Блок2   АВАТАРИ
+// випав з контенту чомусь
 
 .meet_partner {
-  width: 941px;
-  height: 361px;
+  max-width: 941px;
   background-color: #ffffff;
   margin-top: 95px;
   margin-left: auto;
@@ -317,44 +311,32 @@ border: #ffff solid 2px; */
   display: flex;
   flex-direction: column;
   justify-content: end;
+
 }
 
 .title_meet_partner {
-  @include TextPR($Mono, Normal, 700, 26px, 32px, #444444);
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
   text-align: center;
 }
 
 .meet_partner_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 221px);
+  grid-gap: 20px;
   margin-top: 35px;
 }
 
 .partner_item {
-  width: 221px;
+  min-width: 221px;
   height: 225px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-}
-
-.partner1 {
-  position: relative;
-}
-
-.partner1::after {
-  content: "";
-  background-image: "./imgs/music2.jpg";
-  background-color: #ff4e50;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  position: absolute;
-  display: block;
-  top: 80px;
-  left: 130px;
-  border: white 5px solid;
 }
 
 .photo_partner {
@@ -365,26 +347,89 @@ border: #ffff solid 2px; */
   margin-right: auto;
 }
 
-.name_partner {
-  @include TextPR($Mono, normal, 700, 14px, 17px, #444444);
-  text-align: center;
-  margin-top: 17px;
-  margin-bottom: 12px;
+.partner_item::after{
+    background-position: center;
+      background-repeat: no-repeat;
+width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  top: 83px;
+  left: 134px;
+  border: white 5px solid;
 }
 
-.partner_discription {
-  @include TextPR($Robo, normal, 300, 14px, 14px, #666666);
-  padding-top: 29px;
-  text-align: center;
+.partner1 {
+  position: relative;
+  // z-index: 0;
+}
+
+.partner1::after {
+  content: "";
+  background-image: url(./imgs/music.svg);
+  background-color: #ff4e50;
+  
 }
 
 .partner2 {
+  position: relative;
+}
+
+.partner2::after {
+  content: "";
+  background-image: url(/styles/imgs/brush.svg);
+  background-color: #19D4CA;
+ 
+  
 }
 
 .partner3 {
+  position: relative;
+  margin: 0px;
+}
+
+
+.partner3::after {
+  content: "";
+  background-image: url(/styles/imgs/camera.svg);
+  background-color: #FFA710;
+
 }
 
 .partner4 {
+  position: relative;
+}
+
+.partner4::after {
+  content: "";
+  background-image: url(/styles/imgs/airplane.svg);
+  background-color: #667DF3;
+}
+
+
+
+.name_partner {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  text-align: center;
+  margin-top: 17px;
+  margin-bottom: 0px;
+}
+
+.partner_discription {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 14px;
+  color: #666666;
+  padding-top: 12px;
+  text-align: center;
 }
 
 .buttom_purtner {
@@ -397,20 +442,24 @@ border: #ffff solid 2px; */
   border: 2px solid #ff4e50;
   background-color: #ffffff;
   text-align: center;
-  @include TextPR($Mono, normal, 700, 14px, 17px, $buttom-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FF4E50;
   padding: 12px 19px 12px 24px;
 }
 
 .buttom_purtner:hover {
-  background-color: $buttom-color;
+  background-color: #FF4E50;
   color: #ffffff;
 }
 
-// Контент Блок3 Discover_holiday
+// Блок 3 Discover_holiday
 
 .Discover_holiday {
   width: 940px;
-  height: 1041px;
   margin-top: 95px;
   margin-left: auto;
   margin-right: auto;
@@ -420,39 +469,109 @@ border: #ffff solid 2px; */
 }
 
 .title_discover_holiday {
-  @include TextPR($Mono, Normal, 700, 26px, 32px, #444444);
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
   text-align: center;
 }
 
 .photo_holiday {
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.photo_hol_act_idea {
-  position: relative;
+
+.photo_hol {
+
+}
+.act_idea1 {
+  background-image: url(./imgs/Sport.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea2 {
+  background-image: url(./imgs/Healath.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea3 {
+  background-image: url(./imgs/Extreme.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea4 {
+  background-image: url(./imgs/Games.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea5 {
+  background-image: url(./imgs/Culture.png);
+  width: 620px;
+  height: 310px;
+}
+
+.act_idea6 {
+  background-image: url(./imgs/Enjojment.png);
+  width: 620px;
+  height: 310px;
+}
+
+.act_idea7 {
+  background-image: url(./imgs/Treveling.png);
+  width: 300px;
+  height: 310px;
 }
 
 .name_of_activity {
-  position: absolute;
-  margin: auto;
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 310px;
 }
 
 // Блок 4 Create_holiday
+// Блок випав з контенту
 
+.Create_holiday {
+  width: 482px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
 .title_create_holiday {
-  @include TextPR($Mono, Normal, 700, 26px, 32px, #444444);
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  color: #444444;
   text-align: center;
-  margin-top: 89px;
+  margin-top: 85px;
 }
 
 .create_holiday_discription {
   text-align: center;
   margin-top: 43px;
   padding-top: 10px;
-  @include TextPR($Robo, Normal, 300, 18px, 14px, #666666);
+  font-family: "Roboto", sans-serif;
+  font-style: Normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 14px;
+  color: #666666;
 }
 
 .inputbutton {
@@ -472,80 +591,98 @@ border: #ffff solid 2px; */
   border: 1px solid #d4d4d4;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
   border-radius: 3px;
-  @include TextPR($Robo, normal, 300, 14px, 16px, #999999);
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #999999;
   margin-right: 10px;
 }
 
 .input_interests:hover {
-  border: $buttom-color 2px solid;
+  border: #FF4E50 2px solid;
 }
 
 .buttom_interest {
-  @include TextPR($Mono, normal, 700, 14px, 40px, $text-white-color);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 40px;
+  color: white;
   border: none;
-  background-color: $buttom-color;
+  background-color: #FF4E50;
   border-radius: 20px;
   width: 172px;
   height: 100%;
 }
 
-.glow-on-hover {
-}
-
 // Footer
-
+// Блок випав з контенту
 
 
 .footer {
-    width: 1440px;
+  max-width: 1440px;
   height: 224px;
-      border-top: $buttom-color solid 4px;
-      margin-top: 100px;
-      margin-left: auto;
-      margin-right: auto;
-        margin-top: 40px;
-        
-    }
+  border-top: #FF4E50 solid 4px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .footer_box {
-  margin-top: 10px;
+  margin-top: 40px;
   display: flex;
-justify-content: center;
+  justify-content: center;
 }
 
 .Logo_DreamShare {
   text-transform: uppercase;
-  @include TextPR($Mono, normal, 400, 16px, 20px, #FF4E50);
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ff4e50;
   width: 241px;
-
 }
 
 .Company_info {
-  // margin-left: 50px;
   width: 239px;
 }
 
-.title_company_info, .title_partners {
-  @include TextPR($Mono, normal, 700, 14px, 16px, #444444);
+.title_company_info,
+.title_partners {
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
 }
 
 .company_info_list {
-margin-top: 11px;
-@include TextPR($Robo, normal, 300, 14px, 36px, #999999);
-height: 156px;
+  margin-top: 11px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 36px;
+  color: #999999;
+  height: 156px;
 }
 
 .info_item:hover {
-color: #444444;
-font-weight: 500;
-letter-spacing: 2px;
+  color: #444444;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .Partners {
+  text-height: 14px;
+  text-align: 17px;
   width: 351px;
-}
-
-.title_partners {
 }
 
 .Logo_company {
@@ -556,12 +693,22 @@ letter-spacing: 2px;
 
 .Designed {
   text-transform: uppercase;
-  @include TextPR($Mono, normal, 700, 10px, 12px, #CCCCCC);
-  // display: flex;
+  font-family: "Montsserat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+  color: #cccccc;
   letter-spacing: 1px;
 }
-.img_Logo_company{
-width: 110px;
-height: 24px;
-margin-top: 7px; 
+
+.img_Logo_company {
+  width: 110px;
+  height: 24px;
+  margin-top: 7px;
 }
+
+@import "./scss_files_add/scssMedia.scss";
+@import "./scss_files_add/scssMedia768_Tablet.scss";
+@import "./scss_files_add/scssMedia318_Mobile.scss";
+

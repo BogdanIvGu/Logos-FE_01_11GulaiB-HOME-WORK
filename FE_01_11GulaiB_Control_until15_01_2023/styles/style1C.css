@@ -107,25 +107,19 @@ a {
   user-select: none;
 }
 
-@media (max-width: 1440px) {
-  header {
-    background-color: rgb(42, 18, 31);
-  }
+.body {
+  max-width: 1440px;
+  height: 3551px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  margin-left: auto;
+  margin-right: auto;
 }
-@media (max-width: 768px) {
-  header {
-    background-color: rgb(138, 28, 88);
-  }
-}
-@media (max-width: 318px) {
-  header {
-    background-color: rgb(243, 20, 146);
-  }
-}
+
 .header_box {
   background-image: url(./imgs/Background.png);
-  opacity: 0.85;
-  width: 1440px;
+  opacity: 0.95;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -151,8 +145,6 @@ a {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: -height;
-  color: -white;
 }
 
 /* width: 90px;
@@ -233,17 +225,17 @@ border: #ffff solid 2px; */
 }
 
 .hearo_discrip {
-  font-family: "Roboto", sans-serif;
+  font-family: "$Robo", sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
   line-height: 24px;
-  color: #E3E3E3;
+  color: #F7F3F2;
   margin-top: 28.5px;
 }
 
 .hero_button {
-  font-family: "Montsserat", sans-serif;
+  font-family: "$Mono", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -341,26 +333,24 @@ border: #ffff solid 2px; */
 
 .list_drem {
   border-radius: 5px;
-  background-color: black;
   width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  margin: 0 10px;
 }
 
 .drem_item1 {
-  background-image: "./imgs/Step1.png";
-  margin: 0 10px;
+  background-image: url(./imgs/Step1image.png);
 }
 
 .drem_item2 {
-  background-image: "./imgs/Step2.png";
+  background-image: url(./imgs/Step2image.png);
 }
 
 .drem_item3 {
-  background-image: "./imgs/Step3.png";
-  margin: 0 10px;
+  background-image: url(./imgs/Step3image.png);
 }
 
 .button_step {
@@ -388,6 +378,7 @@ border: #ffff solid 2px; */
   color: white;
   width: 250px;
   margin-left: 25px;
+  margin-top: 15px;
 }
 
 .name_dream1 {
@@ -398,14 +389,10 @@ border: #ffff solid 2px; */
   margin: 14px 25px 0 25px;
 }
 
-.name_dream {
-  margin-top: 15px;
-}
-
 .description_drem {
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 14px;
   line-height: 14px;
   color: #E3E3E3;
@@ -416,8 +403,7 @@ border: #ffff solid 2px; */
 }
 
 .meet_partner {
-  width: 941px;
-  height: 361px;
+  max-width: 941px;
   background-color: #ffffff;
   margin-top: 95px;
   margin-left: auto;
@@ -438,36 +424,18 @@ border: #ffff solid 2px; */
 }
 
 .meet_partner_list {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 221px);
+  grid-gap: 20px;
   margin-top: 35px;
 }
 
 .partner_item {
-  width: 221px;
+  min-width: 221px;
   height: 225px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-}
-
-.partner1 {
-  position: relative;
-}
-
-.partner1::after {
-  content: "";
-  background-image: "./imgs/music2.jpg";
-  background-color: #ff4e50;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  position: absolute;
-  display: block;
-  top: 80px;
-  left: 130px;
-  border: white 5px solid;
 }
 
 .photo_partner {
@@ -476,6 +444,60 @@ border: #ffff solid 2px; */
   border-radius: 50%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.partner_item::after {
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  top: 83px;
+  left: 134px;
+  border: white 5px solid;
+}
+
+.partner1 {
+  position: relative;
+}
+
+.partner1::after {
+  content: "";
+  background-image: url(./imgs/music.svg);
+  background-color: #ff4e50;
+}
+
+.partner2 {
+  position: relative;
+}
+
+.partner2::after {
+  content: "";
+  background-image: url(/styles/imgs/brush.svg);
+  background-color: #19D4CA;
+}
+
+.partner3 {
+  position: relative;
+  margin: 0px;
+}
+
+.partner3::after {
+  content: "";
+  background-image: url(/styles/imgs/camera.svg);
+  background-color: #FFA710;
+}
+
+.partner4 {
+  position: relative;
+}
+
+.partner4::after {
+  content: "";
+  background-image: url(/styles/imgs/airplane.svg);
+  background-color: #667DF3;
 }
 
 .name_partner {
@@ -487,7 +509,7 @@ border: #ffff solid 2px; */
   color: #444444;
   text-align: center;
   margin-top: 17px;
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
 .partner_discription {
@@ -497,7 +519,7 @@ border: #ffff solid 2px; */
   font-size: 14px;
   line-height: 14px;
   color: #666666;
-  padding-top: 29px;
+  padding-top: 12px;
   text-align: center;
 }
 
@@ -527,7 +549,6 @@ border: #ffff solid 2px; */
 
 .Discover_holiday {
   width: 940px;
-  height: 1041px;
   margin-top: 95px;
   margin-left: auto;
   margin-right: auto;
@@ -549,17 +570,67 @@ border: #ffff solid 2px; */
 .photo_holiday {
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-.photo_hol_act_idea {
-  position: relative;
+.act_idea1 {
+  background-image: url(./imgs/Sport.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea2 {
+  background-image: url(./imgs/Healath.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea3 {
+  background-image: url(./imgs/Extreme.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea4 {
+  background-image: url(./imgs/Games.png);
+  width: 300px;
+  height: 310px;
+}
+
+.act_idea5 {
+  background-image: url(./imgs/Culture.png);
+  width: 620px;
+  height: 310px;
+}
+
+.act_idea6 {
+  background-image: url(./imgs/Enjojment.png);
+  width: 620px;
+  height: 310px;
+}
+
+.act_idea7 {
+  background-image: url(./imgs/Treveling.png);
+  width: 300px;
+  height: 310px;
 }
 
 .name_of_activity {
-  position: absolute;
-  margin: auto;
+  font-family: "Montsserat", sans-serif;
+  font-style: Normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 310px;
+}
+
+.Create_holiday {
+  width: 482px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title_create_holiday {
@@ -570,7 +641,7 @@ border: #ffff solid 2px; */
   line-height: 32px;
   color: #444444;
   text-align: center;
-  margin-top: 89px;
+  margin-top: 85px;
 }
 
 .create_holiday_discription {
@@ -630,17 +701,16 @@ border: #ffff solid 2px; */
 }
 
 .footer {
-  width: 1440px;
+  max-width: 1440px;
   height: 224px;
   border-top: #FF4E50 solid 4px;
   margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
 }
 
 .footer_box {
-  margin-top: 10px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
 }
@@ -652,7 +722,7 @@ border: #ffff solid 2px; */
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #FF4E50;
+  color: #ff4e50;
   width: 241px;
 }
 
@@ -660,12 +730,13 @@ border: #ffff solid 2px; */
   width: 239px;
 }
 
-.title_company_info, .title_partners {
+.title_company_info,
+.title_partners {
   font-family: "Montsserat", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 17px;
   color: #444444;
 }
 
@@ -687,6 +758,8 @@ border: #ffff solid 2px; */
 }
 
 .Partners {
+  text-height: 14px;
+  text-align: 17px;
   width: 351px;
 }
 
@@ -703,7 +776,7 @@ border: #ffff solid 2px; */
   font-weight: 700;
   font-size: 10px;
   line-height: 12px;
-  color: #CCCCCC;
+  color: #cccccc;
   letter-spacing: 1px;
 }
 
@@ -711,6 +784,348 @@ border: #ffff solid 2px; */
   width: 110px;
   height: 24px;
   margin-top: 7px;
+}
+
+@media (max-width: 768px) {
+  header {
+    background-color: rgb(19, 8, 232);
+  }
+  .body {
+    max-width: 768px;
+    height: 3679px;
+    box-shadow: rgba(235, 41, 11, 0.56) 0px 22px 70px 4px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title_HowDreamWorks {
+    font-size: 22px;
+    line-height: 26.82px;
+    color: #444444;
+    text-align: center;
+    height: 32px;
+  }
+  .HowDreamWorks {
+    margin-top: 95px;
+  }
+  .list_drem {
+    max-width: 236px;
+  }
+  .button_step {
+    margin-left: 20px;
+  }
+  .name_dream {
+    line-height: 14px;
+    margin-left: 20px;
+  }
+  .name_dream1 {
+    padding-top: 30px;
+  }
+  .name_dream2 {
+    width: 150px;
+    word-wrap: wrap;
+  }
+  .name_dream3 {
+    padding-top: 30px;
+  }
+  .description_drem {
+    width: 196px;
+    word-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .meet_partner_list {
+    grid-template-columns: repeat(2, 221px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .partner_item {
+    min-width: 236px;
+    height: 205px;
+  }
+  .Discover_holiday {
+    width: 768px;
+    margin-top: 35px;
+  }
+  .act_idea1 {
+    background-image: url(/styles/imgs/Sport768.png);
+    width: 236px;
+  }
+  .act_idea2 {
+    background-image: url(/styles/imgs/Healath768.png);
+    width: 236px;
+  }
+  .act_idea3 {
+    background-image: url(/styles/imgs/Extreme768.png);
+    width: 236px;
+  }
+  .act_idea4 {
+    background-image: url(/styles/imgs/Games768.png);
+    width: 236px;
+  }
+  .act_idea5 {
+    background-image: url(/styles/imgs/Culture768.png);
+    width: 492px;
+  }
+  .act_idea6 {
+    background-image: url(/styles/imgs/CultureCopy768.png);
+    width: 492px;
+  }
+  .act_idea7 {
+    background-image: url(/styles/imgs/GamesCopy768.png);
+    width: 236px;
+  }
+  .footer {
+    max-width: 768px;
+    height: 224px;
+  }
+  .Logo_DreamShare {
+    width: 227px;
+  }
+  .Company_info {
+    width: 170px;
+  }
+  .Partners {
+    width: 182px;
+  }
+  .Logo_company {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+@media (max-width: 318px) {
+  header {
+    background-color: rgb(255, 2, 145);
+  }
+  .body {
+    max-width: 320px;
+    box-shadow: rgba(58, 244, 6, 0.56) 0px 22px 70px 4px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header_box {
+    background-image: url(/styles/imgs/Background318.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 318px;
+    height: 540px;
+  }
+  .nav {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 400px;
+    line-height: 17px;
+  }
+  .nav_list {
+    width: 153px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Sing_up {
+    line-height: 36px;
+  }
+  .Logo {
+    width: 152px;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 97px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero {
+    margin-top: 26.5px;
+  }
+  .hero_title {
+    width: 272px;
+    height: 74px;
+    font-size: 30px;
+    line-height: 37px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hearo_discrip {
+    width: 280px;
+    height: 49px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 5.5px;
+  }
+  .hero_button {
+    line-height: 40px;
+    width: 280px;
+    height: 40px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .HowDreamWorks {
+    margin-top: 35px;
+  }
+  .list_drems {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .list_drem {
+    max-width: 300px;
+    max-height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .name_dream {
+    line-height: 14px;
+    margin-left: 20px;
+  }
+  .name_dream1 {
+    padding-top: 30px;
+  }
+  .name_dream2 {
+    width: 168px;
+  }
+  .description_drem {
+    width: 250px;
+  }
+  .meet_partner {
+    margin-top: 36px;
+  }
+  .meet_partner_list {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(1, 221px);
+    grid-gap: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .partner3 {
+    min-width: 236px;
+    height: 224px;
+  }
+  .Discover_holiday {
+    width: 318px;
+    margin-top: 35px;
+  }
+  .photo_holiday {
+    display: flex;
+    flex-direction: column;
+    margin-top: 33px;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .photo_hol {
+    width: 300px;
+    height: 120px;
+  }
+  .act_idea1 {
+    background-image: url(/styles/imgs/Sport318.png);
+  }
+  .act_idea2 {
+    background-image: url(/styles/imgs/Healath318.png);
+  }
+  .act_idea3 {
+    background-image: url(./imgs/Extreme318.png);
+  }
+  .act_idea4 {
+    background-image: url(./imgs/Games318.png);
+  }
+  .act_idea5 {
+    background-image: url(./imgs/Culture318.png);
+  }
+  .act_idea6 {
+    background-image: url(/styles/imgs/Culture318Copy.png);
+  }
+  .act_idea7 {
+    background-image: url(/styles/imgs/GamesCopy318.png);
+  }
+  .Create_holiday {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .create_holiday_discription {
+    margin-top: 9px;
+  }
+  .title_create_holiday {
+    margin-top: 35px;
+  }
+  .inputbutton {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    height: 90px;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .input_interests {
+    width: 280px;
+    height: 40px;
+  }
+  .buttom_interest {
+    margin-top: 10px;
+    width: 280px;
+    height: 40px;
+  }
+  .footer {
+    width: 320px;
+    border-top: #ff4e50 solid 4px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+  }
+  .footer_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .Logo_DreamShare {
+    margin-top: 19px;
+    margin-bottom: 13px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 119px;
+    height: 20px;
+  }
+  .title_company_info {
+    width: 320px;
+    text-align: center;
+  }
+  .company_info_list {
+    display: flex;
+    justify-content: center;
+    line-height: 26px;
+    text-align: center;
+    width: 320px;
+    height: 52px;
+    flex-wrap: wrap;
+    margin-top: 1px;
+  }
+  .info_item {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .Partners {
+    width: 320px;
+    height: 17px;
+    text-align: center;
+  }
+  .title_partners {
+    margin-top: 6px;
+  }
+  .Designed {
+    margin-top: 14px;
+  }
+  .Logo_company {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style1C.css.map */

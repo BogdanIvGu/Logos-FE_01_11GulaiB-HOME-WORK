@@ -1,0 +1,186 @@
+// Середній екран
+
+
+@media (max-width: 768px) {
+    header {
+        background-color: rgb(19, 8, 232);
+    }
+
+    .body {
+        max-width: 768px;
+        height: 3679px;
+        box-shadow: rgba(235, 41, 11, 0.56) 0px 22px 70px 4px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title_HowDreamWorks {
+        font-size: 22px;
+        line-height: 26.82px;
+        color: #444444;
+        text-align: center;
+        height: 32px;
+    }
+
+    .HowDreamWorks {
+        margin-top: 95px;
+    }
+
+    .list_drem {
+        max-width: 236px;
+
+    }
+
+    .button_step {
+        margin-left: 20px;
+    }
+
+    .name_dream {
+        line-height: 14px;
+        margin-left: 20px;
+    }
+
+    .name_dream1 {
+        padding-top: 30px;
+    }
+
+    .name_dream2 {
+        width: 150px;
+        word-wrap: wrap;
+    }
+
+    .name_dream3 {
+        padding-top: 30px;
+    }
+
+    .description_drem {
+        width: 196px;
+        word-wrap: wrap;
+        margin-bottom: 16px;
+
+    }
+
+    // Контент Блок2 АВАТАРИ
+
+
+
+
+    // .meet_partner {
+    //     max-width: 941px;
+    //     height: 361px;
+    //     background-color: #ffffff;
+    //     margin-top: 95px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: end;
+    // }
+
+
+
+    .meet_partner_list {
+
+        grid-template-columns: repeat(2, 221px);
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .partner_item {
+        min-width: 236px;
+        height: 205px;
+
+    }
+
+    // Блок 3 Discover_holiday
+
+    .Discover_holiday {
+        width: 768px;
+        margin-top: 35px;
+    }
+
+        .act_idea1 {
+            background-image: url(/styles/imgs/Sport768.png);
+            width: 236px;
+         
+        }
+    
+        .act_idea2 {
+            background-image: url(/styles/imgs/Healath768.png);
+            width: 236px;
+         
+        }
+    
+        .act_idea3 {
+            background-image: url(/styles/imgs/Extreme768.png);
+            width: 236px;
+        
+        }
+    
+        .act_idea4 {
+            background-image: url(/styles/imgs/Games768.png);
+            width: 236px;
+        
+        }
+    
+        .act_idea5 {
+            background-image: url(/styles/imgs/Culture768.png);
+            width: 492px;
+       
+        }
+    
+        .act_idea6 {
+            background-image: url(/styles/imgs/CultureCopy768.png);
+            width: 492px;
+
+        }
+    
+        .act_idea7 {
+            background-image: url(/styles/imgs/GamesCopy768.png);
+            width: 236px;
+
+        }
+
+    // Блок 4 Create_holiday
+
+
+    // Footer
+
+    .footer {
+        max-width: 768px;
+        height: 224px;
+    }
+
+    .footer_box {}
+
+    .Logo_DreamShare {
+
+        width: 227px;
+    }
+
+    .Company_info {
+        width: 170px;
+    }
+
+    .Partners {
+        width: 182px;
+    }
+
+    .Logo_company {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+
+
+
+
+
+
+
+
+
+
+}
