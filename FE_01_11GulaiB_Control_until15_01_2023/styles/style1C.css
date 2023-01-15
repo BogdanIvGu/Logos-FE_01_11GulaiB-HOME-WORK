@@ -793,7 +793,6 @@ border: #ffff solid 2px; */
   .body {
     max-width: 768px;
     height: 3679px;
-    box-shadow: rgba(235, 41, 11, 0.56) 0px 22px 70px 4px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -898,7 +897,6 @@ border: #ffff solid 2px; */
   }
   .body {
     max-width: 320px;
-    box-shadow: rgba(58, 244, 6, 0.56) 0px 22px 70px 4px;
     margin-left: auto;
     margin-right: auto;
   }
