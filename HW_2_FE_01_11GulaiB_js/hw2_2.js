@@ -14,6 +14,7 @@ if (nameIn == userName) {
     else if (paswordIn != userPasword ) {
         alert("Пароль невірний!");
     }
+    // на скасування не працюєю
     else {
         alert("Вхід скасований");
     }
@@ -22,6 +23,7 @@ if (nameIn == userName) {
 else if (nameIn != userName) {
     alert("Я Вас не знаю!");
 }
+// на скасування не працюєю
 else {
     alert("Вхід скасований");
 }
