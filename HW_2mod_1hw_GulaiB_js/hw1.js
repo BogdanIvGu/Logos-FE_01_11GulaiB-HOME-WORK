@@ -1,5 +1,5 @@
-var city;
-var city = "Київ";
+let city;
+let city = "Київ";
 city = "Львів";
-var address = city;
+let address = city;
 alert(address);

@@ -38,21 +38,21 @@
                                 // Завдання 2
 
 // for (let c = 1000; c <=9999; c += 3) {
-// document.write ('Число    ', c ,"       ");
+// document.write (` <h1> Число  ${c} </h1> `);
 // console.log(c);
 // }
 
                                 // Завдання 3
 
 // for (let c = 1; c <=55; c += 2) {
-//     document.write ('Число    ', c ,"       ");
+//     document.write (` <h1> Число  ${c} </h1> `);
 //     console.log(c);
 //     }
 
                                 // Завдання 4
 
 // for (let c = 90; c >=0; c -= 5) {
-//     document.write ('Число    ', c ,"       ");
+//     document.write (` <h1> Число  ${c} </h1> `);
 //     console.log(c);
 //     }
 
@@ -61,14 +61,14 @@
 // let result = 1;
 // for (let c = 1; c <=20; c++ ) {
 //     result *= 2;
-//     document.write ('Число    ', result , "       ");
+//     document.write (` <h1> Число  ${result} </h1> `);
 //     console.log(result);
 //     }
 
 // інший варіант
 
 // for (let a = 1, result = 2; a <=20; a++, result *= 2) {
-//     document.write ('Число    ', result , "       ");
+//     document.write (` <h1> Число  ${result} </h1> `);
 //     console.log(result);
 //     }
 
@@ -76,7 +76,7 @@
 
 // for (let a = 2; a <=10000; a = 2*a-1) {
 //     console.log(a);
-//     document.write ('Число    ', a ,"       ");
+//     document.write (` <h1> Число  ${a} </h1> `);
 //     }
 
 
@@ -85,7 +85,7 @@
 // for (let a = -166; a <100; a = 2*a+200) {
 //     if (a > -100 && a < 100){
 //     console.log(a);
-//     document.write ('Число    ', a ,"       ");}
+//     document.write (` <h1> Число  ${a} </h1> `);
 //     }
 
 //     // && a < 100 - зайве бо умова вже прописана в циклі 
@@ -113,4 +113,4 @@ for (let i = 1; i <= Math.abs(b); i++) {
     }
     console.log(resalt);
 }
-document.write ('Значення приведення степеня ' , resalt);
+document.write (` <h1> Значення приведення степеня  ${resalt} </h1> `);
