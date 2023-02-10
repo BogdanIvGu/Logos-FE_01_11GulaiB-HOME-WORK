@@ -107,13 +107,10 @@ for (let i = 1; i <= Math.abs(b); i++) {
     }
     else if (b == 0) {resalt = 1;
         console.log(resalt);
-        
     }
     else {
         document.write ('Значення введені не вірно');
     }
-
     console.log(resalt);
-    
 }
 document.write ('Значення приведення степеня ' , resalt);
