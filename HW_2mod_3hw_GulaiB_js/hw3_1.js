@@ -11,7 +11,7 @@
 
 // function factorial(let n){
 //     n = prompt('Введіть число для обчислення факторіала всіх натуральних чисел' , ' Введіть число')
-//     var result = 1;
+//     let result = 1;
 //     while(n){
 //         result *= n--;
 //     }
