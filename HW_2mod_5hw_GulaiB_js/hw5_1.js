@@ -32,42 +32,99 @@
 
 // Друга задача
 
+// let n = prompt(
+//     "Введіть число для перевірки чи воно просте",
+//     " Введіть число",
+//   );
+  
+//   function primality(n) {
+//     if (n === null) {
+//       return alert(
+//         "Відбулось скасування",
+//       );
+//     } else if (isNaN(n)) {
+//       return alert(
+//         "введіть коректне значення",
+//       );
+//     } else {
+//       for (let i = 2; i < n; i++) {
+//         if (n % i === 0)
+//           return alert(
+//             `число ${n} не є простим`,
+//           );
+//       }
+//       return alert(
+//         `число ${n} є простим`,
+//       );
+//     }
+//   }
 
-let n = prompt('Введіть число для перевірки чи воно просте', ' Введіть число')
-console.log(typeof(n))
-
-function namber(n) {
 
 
-    if (isNaN(n)) {
-        console.log(`введіть коректне значення `);
-        alert(`введіть коректне значення `);
-        // не розумію чому NOt a Namber  не працює
+// Друга задача
+
+
+let n = prompt('Введіть число для перевірки чи воно просте', ' Введіть число');
+
+function isPrimeNumber(n) {
+  if (n === null) {
+    console.log('Відбулось скасування');
+    alert('Відбулось скасування');
+  } else if (isNaN(n) || !Number.isInteger(+n) || +n <= 1) {
+    console.log('Введіть коректне натуральне число');
+    alert('Введіть коректне натуральне число');
+  } else {
+    let isPrime = true;
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+        isPrime = false;
+        break;
+      }
     }
-    else if (!isNaN(n)) {
-        for (let i = 2; i <= n; i++) {
-            let check = true;
-            if (n % 1 == 0) {
-                check = false;
-            }
-        }
-        console.log(`число ${n} є простим`);
-        alert(`число ${n} є простим`);
+    if (isPrime) {
+      console.log(`Число ${n} є простим`);
+      alert(`Число ${n} є простим`);
+    } else {
+      console.log(`Число ${n} не є простим`);
+      alert(`Число ${n} не є простим`);
     }
-    // else if ( check = false) {
-    //     console.log(`число ${n} не є простим`);
-    //     alert(`число ${n} не є натуральним`);
-    // }
-    else if (n === null) {
-        console.log(`Відбулось скасування `);
-        alert(`Відбулось скасування `);
-        // Не розумію, чому коли цей крок є нижче за перевірку на просте число чи ні - тоді не працює скасування
-    }
-
-    return n;
+  }
 }
 
-namber(n);
+isPrimeNumber(n);
+
+
+// Невдала спроба
+// let n = prompt('Введіть число для перевірки чи воно просте', ' Введіть число')
+// console.log(typeof(n))
+
+// function namber(n) {
+
+//     if (isNaN(n)) {
+//         console.log(`введіть коректне значення `);
+//         alert(`введіть коректне значення `);
+//         // не розумію чому NOt a Namber  не працює коли перед promt стоїть плюс +
+//     }
+//     else if (n === null) {
+//         console.log(`Відбулось скасування `);
+//         return alert(`Відбулось скасування `);
+//     }
+
+//     else if (!isNaN(n)) {
+//         for (let i = 2; i <= n; i++) {
+//             let check = true;
+//             if (n % 1 == 0) {
+//                 check = false;
+//             }
+//         }
+//         console.log(`число ${n} є простим`);
+//         return alert(`число ${n} є простим`);
+//     }
+
+//     return n;
+// }
+
+// namber(n);
 
 
 // Третя задача 
