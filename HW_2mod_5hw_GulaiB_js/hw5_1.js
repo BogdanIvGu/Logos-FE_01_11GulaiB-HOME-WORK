@@ -64,34 +64,34 @@
 // Друга задача
 
 
-let n = prompt('Введіть число для перевірки чи воно просте', ' Введіть число');
+// let n = prompt('Введіть число для перевірки чи воно просте', ' Введіть число');
 
-function isPrimeNumber(n) {
-  if (n === null) {
-    console.log('Відбулось скасування');
-    alert('Відбулось скасування');
-  } else if (isNaN(n) || !Number.isInteger(+n) || +n <= 1) {
-    console.log('Введіть коректне натуральне число');
-    alert('Введіть коректне натуральне число');
-  } else {
-    let isPrime = true;
-    for (let i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) {
-        isPrime = false;
-        break;
-      }
-    }
-    if (isPrime) {
-      console.log(`Число ${n} є простим`);
-      alert(`Число ${n} є простим`);
-    } else {
-      console.log(`Число ${n} не є простим`);
-      alert(`Число ${n} не є простим`);
-    }
-  }
-}
+// function isPrimeNumber(n) {
+//   if (n === null) {
+//     console.log('Відбулось скасування');
+//     alert('Відбулось скасування');
+//   } else if (isNaN(n) || !Number.isInteger(+n) || +n <= 1) {
+//     console.log('Введіть коректне натуральне число');
+//     alert('Введіть коректне натуральне число');
+//   } else {
+//     let isPrime = true;
+//     for (let i = 2; i <= Math.sqrt(n); i++) {
+//       if (n % i === 0) {
+//         isPrime = false;
+//         break;
+//       }
+//     }
+//     if (isPrime) {
+//       console.log(`Число ${n} є простим`);
+//       alert(`Число ${n} є простим`);
+//     } else {
+//       console.log(`Число ${n} не є простим`);
+//       alert(`Число ${n} не є простим`);
+//     }
+//   }
+// }
 
-isPrimeNumber(n);
+// isPrimeNumber(n);
 
 
 // Невдала спроба
@@ -131,23 +131,23 @@ isPrimeNumber(n);
 // зроблено але є уточнюючі питання
 
 
-// function maxNamber(...arg) {
-//     let max = arg[0];
-//     for (let i = 0; i<arg.length; ++i) {
-//         if (arg[i] <= max ) continue; 
-//         // чому без верхнього рядка (if (arg[i] <= max ) continue; ) функція не працює, 
-//         // і видає тільки останні значення масиву за максимум, 
-//         // хоч те що я записав нижче ( if (arg[i] > max ); ), воно мало б перезаписувати завжди максимум
-//         if (arg[i] > max );
-//         max = arg[i];
-//     }
-//     console.log(max);
-//     console.log(typeof(arg));
-//     // console.log(`Математичний метод ${Math.max(...arg)}`)
+function maxNamber(...arg) {
+    let max = arg[0];
+    for (let i = 0; i<arg.length; ++i) {
+        if (arg[i] <= max ) {continue}; 
+        // чому без верхнього рядка (if (arg[i] <= max ) continue; ) функція не працює, 
+        // і видає тільки останні значення масиву за максимум, 
+        // хоч те що я записав нижче ( if (arg[i] > max ); ), воно мало б перезаписувати завжди максимум
+        if (arg[i] > max );
+        {max = arg[i]};
+    }
+    console.log(max);
+    console.log(typeof(arg));
+    // console.log(`Математичний метод ${Math.max(...arg)}`)
     
     
-// }
-// maxNamber(5, -2, 30, 36, 0);
-// maxNamber(5, -2, 10, -20, -5, 9);
+}
+maxNamber(5, -2, 30, 36, 0);
+maxNamber(5, -2, 10, -20, -5, 9);
 
 

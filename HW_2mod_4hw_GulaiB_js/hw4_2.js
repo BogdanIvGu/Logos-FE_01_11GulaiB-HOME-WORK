@@ -78,30 +78,30 @@
 
 
                                 // Завдання 8
-let a = +prompt('Введіть число для обчислення степеня' , 'Число');
-let b = +prompt('Введіть значення степеня');
-let result = 1;
-let i = 1;
-while ( i <= Math.abs(b)) { 
-     i++;   
-     if (b === 0) {result = 1;
-        console.log(result);
-    }
-    else if (b < 0) {
-        result=result/Math.abs(a);
-        console.log(result);
-        // тут рахує чітко по формулі згідно домашнього завдання, а не підносить до відємного степеня математично
-    }
-    else if (b > 0){
-        result*=Math.abs(a);
-        console.log(result);
-    }
-    else {
-        document.write ('Значення введені не вірно');
-    }
-    console.log(result);
-}
-document.write (` <h1> Значення приведення степеня  ${result} </h1> `);
+// let a = +prompt('Введіть число для обчислення степеня' , 'Число');
+// let b = +prompt('Введіть значення степеня');
+// let result = 1;
+// let i = 1;
+// while ( i <= Math.abs(b)) { 
+//      i++;   
+//      if (b === 0) {result = 1;
+//         console.log(result);
+//     }
+//     else if (b < 0) {
+//         result=result/Math.abs(a);
+//         console.log(result);
+//         // тут рахує чітко по формулі згідно домашнього завдання, а не підносить до відємного степеня математично
+//     }
+//     else if (b > 0){
+//         result*=Math.abs(a);
+//         console.log(result);
+//     }
+//     else {
+//         document.write ('Значення введені не вірно');
+//     }
+//     console.log(result);
+// }
+// document.write (` <h1> Значення приведення степеня  ${result} </h1> `);
 
 
 
