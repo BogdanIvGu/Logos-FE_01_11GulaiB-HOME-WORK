@@ -7,23 +7,23 @@ let userPasword = "Логос";
 
 let nameIn = prompt("Введіть імя Латиницею", " Use name");
 if (nameIn == userName) {
-    let paswordIn = prompt(" Введіть пароль Кирилицею", " Use your pasword");
-     if (paswordIn === null) {
-        alert("Вхід скасований!");
-    }
-    else if (paswordIn !== userPasword ) {
-        alert("Пароль невірний!");
-    }
-    else if (paswordIn === userPasword ) {
-      alert("Ласкаво просимо!");
+  let paswordIn = prompt(" Введіть пароль Кирилицею", " Use your pasword");
+  if (!paswordIn) {
+    alert("Вхід скасований!");
+  }
+  else if (paswordIn !== userPasword) {
+    alert("Пароль невірний!");
+  }
+  else if (paswordIn === userPasword) {
+    alert("Ласкаво просимо!");
   }
 }
 
-else if (nameIn === null) {
+else if (!nameIn) {
   alert("Вхід скасований!");
 }
 else if (nameIn !== userName) {
-    alert("Я Вас не знаю!");
+  alert("Я Вас не знаю!");
 }
 
 
