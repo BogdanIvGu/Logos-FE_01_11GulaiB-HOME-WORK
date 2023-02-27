@@ -1,64 +1,42 @@
-                            // // Перша задача
+// // Перша задача
 
-// let text = prompt("Введіть текст:");
-// let spaces = text.split(" ").length - 1;
-// console.log(`Кількість пробілів: ${spaces}`);
-// alert(`Кількість пробілів: ${spaces}`);
+let person = {};
+person.firstName = "Ivan";
+person.secondName = "Ivanov";
+person.showData = function () {
+  console.log(this.firstName + " " + this.secondName);
+};
+let newPerson = Object.assign({}, person);
+newPerson.firstName = "Petro";
+newPerson.secondName = "Petriv";
+person.showData(); // поверне Ivan Ivanov
+newPerson.showData(); // поверне Petro Petriv
 
-                  // Друга  задача
+// Друга  задача
 
+let MyMath = {};
 
-// let email = prompt("Введіть email-адресу:");
-// if (email.indexOf("@") > 0 && email.indexOf("@") < email.length - 1) {
-//   console.log("Email-адреса введена правильно");
-// } else {
-//   console.log("Email-адреса введена некоректно");
-// }
+MyMath.a = 5;
 
+MyMath.b = 2;
 
-// Третя задача
+MyMath.sum = function () {
+  console.log(this.a + this.b);
+};
 
+MyMath.multiplication = function () {
+  console.log(this.a * this.b);
+};
 
-// let input = prompt("Введіть текст:");
-// let words = input.split(" "); 
-// console.log(words); // перевіряю що вивело ))
-// let count = 0;
-// for (let i = 0; i < words.length; i++) {
-//   if (words[i].toLowerCase() === "html") { 
-//     count++;
-//   }
-// }
-// console.log(count);
+MyMath.division = function () {
+  console.log(this.a / this.b);
+};
 
+MyMath.subtraction = function () {
+  console.log(this.a - this.b);
+};
 
-// Четверта задача
-// // Варіант1
-// const url = prompt("Введіть URL адресу ");
-// if(url.startsWith("https://")) {
-// console.log (url.slice(8).toLowerCase());
-// }
-// else if (url.startsWith("http://")){
-//   console.log (url.slice(7).toLowerCase());
-//   }
-// else {
-//   console.log (url.toLowerCase());
-// }
-
-// // Варіант2
-// const url = prompt("Введіть URL адресу ");
-// const index = url.indexOf("www");
-// const output = url.slice(index);
-// console.log(output.toLowerCase());
-
-
-
-
-
-// варіант чату GPT
-// const url = prompt("Введіть URL адресу ");
-// const dom = url.replace(/^(https?:\/\/)?(www\.)?/i, '').split('/')[0];
-
-// console.log(dom);
-
-
-
+MyMath.sum();
+MyMath.multiplication();
+MyMath.division();
+MyMath.subtraction();
