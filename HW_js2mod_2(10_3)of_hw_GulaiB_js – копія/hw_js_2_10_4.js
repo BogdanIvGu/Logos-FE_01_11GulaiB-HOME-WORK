@@ -61,9 +61,20 @@
 //  – запише в змінну масив[‘html’,‘css’,‘js’,‘python’,‘scss’]).
 
 
-const removeDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) === index);
+// const removeDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) === index);
 
-const arr1 = removeDuplicates([`html`, `css`, `html`, `js`]);
+// const arr1 = removeDuplicates([`html`, `css`, `Html`, `js`]);
+// const arr2 = removeDuplicates([`html`, `css`, `js`, `html`, `js`, `python`, `js`, `scss`]);
+
+// console.log(arr1);
+// console.log(arr2);
+
+const removeDuplicates = arr => arr.filter((item, index) => {
+  const lowercaseItem = item.toLowerCase();
+  return arr.findIndex(element => element.toLowerCase() === lowercaseItem) === index;
+});
+
+const arr1 = removeDuplicates([`html`, `css`, `Html`, `js`]);
 const arr2 = removeDuplicates([`html`, `css`, `js`, `html`, `js`, `python`, `js`, `scss`]);
 
 console.log(arr1);
