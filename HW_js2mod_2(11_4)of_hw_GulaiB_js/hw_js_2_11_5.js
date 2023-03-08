@@ -1,4 +1,4 @@
 
 // // Завдання 1
 
-// TextDecoderStream
+// Teст
