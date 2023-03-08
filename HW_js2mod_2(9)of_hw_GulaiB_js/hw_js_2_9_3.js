@@ -1,6 +1,6 @@
 
 
-// Завдання 1
+Завдання 1
 // Напишіть функцію getArea(number), яка обчислює площу круга. Для визначення площі
 // використовуйте Math. В залежності від того що передали в функцію має виводити наступні повідомлення:
 // •	Якщо передане число повертати - Площа дорівнює стільки то квадратних одиниць.
@@ -8,28 +8,27 @@
 // •	Якщо в функцію нічого не передали - Будь ласка, введіть радіус!
 
 
-// let number = prompt("Введіть значення радіус", "Значення в метрах")
-// function getArea(number) {
-//   if (number === null) {
-//     console.log('Будь ласка, введіть радіус! Відбулось скасування');
-//     return alert('Будь ласка, введіть радіус! Відбулось скасування');
-//   }
-
-//   else if (number === "") {
-//     console.log('Пустий рядок');
-//     return alert('Пустий рядок');
-//   }
-//   else if (isNaN(number)) {
-//     console.log('Повинно бути числове значення.');
-//     return alert('Повинно бути числове значення.');
-//   }
-//   else {
-//     const area = Math.PI * Math.pow(number, 2);
-//     console.log(`Площа дорівнює ${area.toFixed(2)} квадратних одиниць.`);
-//     return alert(`Площа дорівнює ${area.toFixed(2)} квадратних одиниць.`);
-//   }
-// }
-// getArea(number);
+let number = prompt("Введіть значення радіус", "Значення в метрах")
+function getArea(number) {
+  if (number === null) {
+    console.log('Будь ласка, введіть радіус! Відбулось скасування');
+    return alert('Будь ласка, введіть радіус! Відбулось скасування');
+  }
+  else if (number === "") {
+    console.log('Пустий рядок');
+    return alert('Пустий рядок');
+  }
+  else if (isNaN(number)) {
+    console.log('Повинно бути числове значення.');
+    return alert('Повинно бути числове значення.');
+  }
+  else {
+    const area = Math.PI * Math.pow(number, 2);
+    console.log(`Площа дорівнює ${area.toFixed(2)} квадратних одиниць.`);
+    return alert(`Площа дорівнює ${area.toFixed(2)} квадратних одиниць.`);
+  }
+}
+getArea(number);
 
 // // // Друга  задача
 // // Напишіть функцію getSqrt(number), яка вираховує корінь квадратний. Для визначення кореня використовуйте Math. В залежності від того що передали в функцію має виводити наступні повідомлення:
@@ -88,54 +87,54 @@
 // При створенні цих методів використання об’єкту Math заборонене!
 
 
-const MyMath = {
-  PI: 3.14,
-  pow: function(number, degree) {
-    if (isNaN(number) || isNaN(degree)) {
-      console.log("Повинно бути числове значення.");
-      return "Повинно бути числове значення.";
-    }
-    return number ** degree;
-  },
-  abs: function(number) {
-    if (isNaN(number)) {
-      console.log("Повинно бути числове значення.");
-      return "Повинно бути числове значення.";
-    }
-    return number >= 0 ? number : -number;
-  },
-  max: function() {
-    let maxNumber = -Infinity;
-    if (arguments.length === 0) {
-      console.log("Будь ласка, введіть число або числа!");
-      return "Будь ласка, введіть число або числа!";
-    }
-    for (let i = 0; i < arguments.length; i++) {
-      if (typeof arguments[i] !== "number") {
-        console.log("Повинно бути числове значення.");
-        return "Повинно бути числове значення.";
-      }
-      if (arguments[i] > maxNumber) {
-        maxNumber = arguments[i];
-      }
-    }
-    return maxNumber;
-  },
-  min: function() {
-    let minNumber = Infinity;
-    if (arguments.length === 0) {
-      console.log("Будь ласка, введіть число або числа!");
-      return "Будь ласка, введіть число або числа!";
-    }
-    for (let i = 0; i < arguments.length; i++) {
-      if (typeof arguments[i] !== "number") {
-        console.log("Повинно бути числове значення.");
-        return "Повинно бути числове значення.";
-      }
-      if (arguments[i] < minNumber) {
-        minNumber = arguments[i];
-      }
-    }
-    return minNumber;
-  },
-};
+// const MyMath = {
+//   PI: 3.14,
+//   pow: function(number, degree) {
+//     if (isNaN(number) || isNaN(degree)) {
+//       console.log("Повинно бути числове значення.");
+//       return "Повинно бути числове значення.";
+//     }
+//     return number ** degree;
+//   },
+//   abs: function(number) {
+//     if (isNaN(number)) {
+//       console.log("Повинно бути числове значення.");
+//       return "Повинно бути числове значення.";
+//     }
+//     return number >= 0 ? number : -number;
+//   },
+//   max: function() {
+//     let maxNumber = -Infinity;
+//     if (arguments.length === 0) {
+//       console.log("Будь ласка, введіть число або числа!");
+//       return "Будь ласка, введіть число або числа!";
+//     }
+//     for (let i = 0; i < arguments.length; i++) {
+//       if (typeof arguments[i] !== "number") {
+//         console.log("Повинно бути числове значення.");
+//         return "Повинно бути числове значення.";
+//       }
+//       if (arguments[i] > maxNumber) {
+//         maxNumber = arguments[i];
+//       }
+//     }
+//     return maxNumber;
+//   },
+//   min: function() {
+//     let minNumber = Infinity;
+//     if (arguments.length === 0) {
+//       console.log("Будь ласка, введіть число або числа!");
+//       return "Будь ласка, введіть число або числа!";
+//     }
+//     for (let i = 0; i < arguments.length; i++) {
+//       if (typeof arguments[i] !== "number") {
+//         console.log("Повинно бути числове значення.");
+//         return "Повинно бути числове значення.";
+//       }
+//       if (arguments[i] < minNumber) {
+//         minNumber = arguments[i];
+//       }
+//     }
+//     return minNumber;
+//   },
+// };
