@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW11_5</title>
+</head>
+<body>
+<h1>Вітаємо на сторінці!</h1>
+	<p>Тут ви можете змінювати стилі вашої сторінки за допомогою JavaScript.</p>
+	<div>Додайте сайти та змініть стилі цих списків </div>
+	<ul>
+		<li>https://learn.javascript.ru/searching-elements-dom</li>
+
+	</ul>
+
+	<nav>
+		<label for="bg-color">Колір фону:</label>
+		<input type="color" id="bg-color" value="#808080"><br>
+
+		<label for="font-type">Тип шрифту:</label>
+		<select id="font-type">
+			<option value="Arial">Arial</option>
+			<option value="Helvetica">Helvetica</option>
+			<option value="Times New Roman">Times New Roman</option>
+			<option value="Verdana">Verdana</option>
+			<option value="Courier New">Courier New</option>
+		</select><br>
+
+		<label for="header-align">Вирівнювання заголовка:</label>
+		<select id="header-align">
+			<option value="left">Ліворуч</option>
+			<option value="center">По центру</option>
+			<option value="right">Праворуч</option>
+		</select><br>
+
+		<label for="link-bg-color">Колір фону параграфа зі зсилками:</label>
+		<input type="color" id="link-bg-color" value="#006400"><br>
+
+		<label for="link-text-color">Колір тексту для параграфа зі зсилками та зсилок:</label>
+		<input type="color" id="link-text-color" value="#205685"><br>
+
+		<label for="sites-list">Список сайтів:</label>
+		<input type="text" id="sites-list"><br>
+
+		<label for="list-style-type">Тип маркера для маркованого списку:</label>
+		<select id="list-style-type">
+			<option value="disc">Круглий маркер</option>
+			<option value="circle">Коло</option>
+			<option value="square">Квадрат</option>
+			<option value="decimal">Цифри</option>
+			<option value="lower-alpha">Малий латинський алфавіт</option>
+			<option value="upper-alpha">Великий латинський алфавіт</option>
+		</select><br>
+
+		<button onclick="applyStyles()">Застосувати стилі</button>
+	</nav>
+
+    <script src="./hw_js_2_11_5.js"></script>
+</body>
+</html>
