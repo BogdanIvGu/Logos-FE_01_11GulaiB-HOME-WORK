@@ -10,7 +10,7 @@ function applyStyles() {
 
     
 
-  // Застосування стил≥в до стор≥нки
+  // Застосування стилів до сторінки
   document.body.style.backgroundColor = bgColor;
   document.body.style.fontFamily = fontType;
   document.querySelector("h1").style.textAlign = headerAlign;
@@ -42,6 +42,7 @@ function applyStyles() {
     });
 }
 
+
 // Функція для додавання сайту до списку
 function addLink() {
     let site=document.querySelector("#sites-list").value; 
@@ -58,7 +59,7 @@ document.querySelector('#sites-list').addEventListener('input', function(){
    let site=this.value; 
    if(site){
        if(!document.getElementById('add-button')){
-           var button=document.createElement('button');
+           const button=document.createElement('button');
            button.innerHTML='Додати';
            button.id='add-button';
            button.onclick=addLink; 
@@ -66,8 +67,16 @@ document.querySelector('#sites-list').addEventListener('input', function(){
        }
    }else{
        if(document.getElementById('add-button')){
-           var button=document.getElementById('add-button');
+           const button=document.getElementById('add-button');
            button.parentNode.removeChild(button);
        }
    }
 });
+
+document.querySelector('#sites-list').addEventListener('keypress', event => {
+    if (event.keyCode === 13) {
+        addLink();
+    }
+});
+
+
