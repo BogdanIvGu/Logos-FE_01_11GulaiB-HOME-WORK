@@ -3,7 +3,7 @@ let block = document.getElementById('block');
 
 
 block.addEventListener('mouseout', function () {
-    this.textContent = 'У мене є секрет!';
+    this.textContent = 'У мене є секрет! mouseout';
     this.textAlign = 'center';
     this.style.color = 'black';
     this.style.backgroundColor = 'purple';
@@ -14,7 +14,7 @@ block.addEventListener('mouseout', function () {
 });
 
 block.addEventListener('mouseover', function() {
-    this.textContent = 'Хочеш знати який?';
+    this.textContent = 'Хочеш знати який? mouseover';
     this.style.color = 'black';
     // this.textAlign = 'center';
     // this.style.verticalAlign = 'middle';
@@ -26,7 +26,7 @@ block.addEventListener('mouseover', function() {
 });
 
 block.addEventListener('mousedown', function() {
-    this.textContent = 'А я тобі не скажу';
+    this.textContent = 'А я тобі не скажу mousedown';
     // this.textAlign = 'center';
     this.style.color = 'white';
     // this.style.verticalAlign = 'middle';
@@ -38,7 +38,7 @@ block.addEventListener('mousedown', function() {
 });
 
 block.addEventListener('mouseup', function() {
-    this.textContent = 'Хочеш знати який?';
+    this.textContent = 'Хочеш знати який? mouseup';
     this.style.color = 'black';
     this.style.fontWeight = 'bold';
     // this.textAlign = 'center';
@@ -51,7 +51,7 @@ block.addEventListener('mouseup', function() {
     // Змінити стиль блоку тут
 });
 block.addEventListener('mouseout', function () {
-    this.textContent = 'У мене є секрет!';
+    this.textContent = 'У мене є секрет!  mouseout';
     this.style.backgroundColor = 'purple';
     this.textAlign = 'center';
     this.style.color = 'blue';

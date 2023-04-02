@@ -1,168 +1,116 @@
-const inputField = document.getElementById('input-field');
 const keys = document.querySelectorAll('.key');
-let shiftPressed = false;
-let backspaceTimer = null;
+const inputField = document.getElementById('input-field');
+const capsLock = document.querySelector('.capslock');
 
-function handleClick(event) {
-  const keyElement = event.target;
-  const key = keyElement.dataset.key;
-  const symbols = {
-    8: 'Backspace',
-    9: 'Tab',
-    13: 'Enter',
-    16: 'Shift',
-    20: 'Caps Lock',
-    32: ' ',
-    186: ';',
-    187: '=',
-    188: ',',
-    189: '-',
-    190: '.',
-    191: '/',
-    192: '`',
-    219: '[',
-    220: '\\',
-    221: ']',
-    222: "'",
-    48: '0',
-    49: '1',
-    50: '2',
-    51: '3',
-    52: '4',
-    53: '5',
-    54: '6',
-    55: '7',
-    56: '8',
-    57: '9',
-    65: 'a',
-    66: 'b',
-    67: 'c',
-    68: 'd',
-    69: 'e',
-    70: 'f',
-    71: 'g',
-    72: 'h',
-    73: 'i',
-    74: 'j',
-    75: 'k',
-    76: 'l',
-    77: 'm',
-    78: 'n',
-    79: 'o',
-    80: 'p',
-    81: 'q',
-    82: 'r',
-    83: 's',
-    84: 't',
-    85: 'u',
-    86: 'v',
-    87: 'w',
-    88: 'x',
-    89: 'y',
-    90: 'z'
-   };
-  
- const symbol = symbols[key];
-  
- if (symbol === "Backspace") {
-   if (!backspaceTimer) {
-     inputField.value = inputField.value.slice(0, -1);
-     backspaceTimer = setInterval(() => {
-       inputField.value = inputField.value.slice(0, -1);
-     },200);
-   }
- } else if (symbol === "Tab") {
-   inputField.value += '\t';
- } else if (symbol === "Caps Lock") {
-   const capsLockKey = document.querySelector('.capslock');
-   if (capsLockKey.classList.contains('active')) {
-     capsLockKey.classList.remove('active');
-   } else {
-     capsLockKey.classList.add('active');
-   }
- } else if (symbol === "Enter") {
-   inputField.value += '\n';
- } else if (symbol === "Shift") {
-   
- } else {
-     let textToAdd;
-     if(document.querySelector('.capslock').classList.contains('active')){
-       textToAdd=symbol.toUpperCase();
-     }
-     else{
-            textToAdd = symbol.toLowerCase();
-         // Add text to input field
-inputField.value += textToAdd;
+let backspaceIntervalId;
 
-// Reset backspaceTimer if it exists
-if (backspaceTimer) {
-clearInterval(backspaceTimer);
-backspaceTimer = null;
-}
+const insertTab = () => {
+  const start = inputField.selectionStart;
+  const end = inputField.selectionEnd;
+  inputField.value = inputField.value.substring(0, start) + '\t' + inputField.value.substring(end);
+  inputField.selectionStart = inputField.selectionEnd = start + 1;
+};
 
-// Reset shiftKeyTimer if it exists
-if (shiftKeyTimer) {
-clearInterval(shiftKeyTimer);
-shiftKeyTimer = null;
-}
 
-// If shift key is currently active, deactivate it
-if (shiftKeyActive) {
-shiftKeyActive = false;
-shiftKey.classList.remove('active');
-}
 
-// Scroll input field to the end
-inputField.scrollLeft = inputField.scrollWidth;
-}
+const insertNewline = () => {
+  const start = inputField.selectionStart;
+  const end = inputField.selectionEnd;
+  const currentValue = inputField.value;
+  inputField.value = currentValue.substring(0, start) + '\n' + currentValue.substring(end);
+  inputField.selectionStart = inputField.selectionEnd = start + 1;
+};
 
-// Add event listeners to keyboard keys
-keys.forEach(key => {
-key.addEventListener('mousedown', e => {
-e.preventDefault();
-key.classList.add('active');
-handleKeyPress(key.dataset.key);
+
+const handleBackspace = () => {
+  const value = inputField.value;
+  const cursorPos = inputField.selectionStart;
+  if (cursorPos > 0) {
+    const newValue = value.substring(0, cursorPos - 1) + value.substring(cursorPos);
+    inputField.value = newValue;
+    inputField.selectionStart = inputField.selectionEnd = cursorPos - 1;
+  }
+};
+
+const startBackspaceInterval = () => {
+  if (!backspaceIntervalId) {
+    backspaceIntervalId = setInterval(() => {
+      handleBackspace();
+    }, 333);
+  }
+};
+
+const stopBackspaceInterval = () => {
+  clearInterval(backspaceIntervalId);
+  backspaceIntervalId = null;
+};
+
+
+const handleKeyClick = (key) => {
+  const value = key.textContent;
+  const capsLockOn = capsLock.classList.contains('active');
+  inputField.focus();
+  switch (value) {
+    case 'Tab':
+      insertTab();
+      break;
+    case 'Caps Lock':
+      capsLock.classList.toggle('active');
+      break;
+    case 'Enter':
+      insertNewline();
+      break;
+    case 'Backspace':
+      handleBackspace();
+      break;
+    default:
+      inputField.value += capsLockOn ? value.toUpperCase() : value.toLowerCase();
+  }
+  key.style.backgroundColor = 'darkgrey';
+  setTimeout(() => {
+    key.style.backgroundColor = '';
+  }, 500);
+};
+
+const handleKeyPress = (event) => {
+  if (event.key === 'Tab') {
+    event.preventDefault();
+    insertTab();
+  } else if (event.key === 'Enter') {
+    event.preventDefault();
+    insertNewline();
+  } else if (event.key === 'Backspace') {
+    event.preventDefault();
+    handleBackspace();
+    startBackspaceInterval();
+  }
+};
+
+const handleKeyUp = (event) => {
+  if (event.key === 'Backspace') {
+    stopBackspaceInterval();
+  }
+};
+
+keys.forEach((key) => {
+  key.addEventListener('click', () => {
+    handleKeyClick(key);
+  });
 });
 
-key.addEventListener('mouseup', () => {
-key.classList.remove('active');
-});
+inputField.addEventListener('keydown', handleKeyPress);
+inputField.addEventListener('keyup', handleKeyUp);
 
-key.addEventListener('mouseleave', () => {
-key.classList.remove('active');
-});
-});
 
-// Add event listener to shift key for toggle
-shiftKey.addEventListener('click', () => {
-if (!shiftKeyTimer) {
-shiftKeyActive = true;
-shiftKey.classList.add('active');
-keys.forEach(key => {
-const symbol = key.dataset.key;
-if (symbol.length === 1 && /[a-z]/.test(symbol)) {
-key.textContent = shiftKeyActive ? symbol.toUpperCase() : symbol.toLowerCase();
-}
-});
-shiftKeyTimer = setInterval(() => {
-shiftKeyActive = !shiftKeyActive;
-keys.forEach(key => {
-const symbol = key.dataset.key;
-if (symbol.length === 1 && /[a-z]/.test(symbol)) {
-key.textContent = shiftKeyActive ? symbol.toUpperCase() : symbol.toLowerCase();
-}
-});
-}, 500);
-} else {
-clearInterval(shiftKeyTimer);
-shiftKeyTimer = null;
-shiftKeyActive = false;
-keys.forEach(key => {
-const symbol = key.dataset.key;
-if (symbol.length === 1 && /[a-z]/.test(symbol)) {
-key.textContent = symbol.toLowerCase();
-}
-});
-shiftKey.classList.remove('active');
-}
-});
+
+
+
+
+
+// за допомогою js та події клавіатури(keyboard event) необхідно добавляти текст який ми вводимо а також підсвічути клавіші які натискаємо
+// мова клавіатури тільки одна – англійська
+// клавіша tab – має робити табуляцію
+// клавіша caps lock – має робити для друку текст в верхньому регістрі, коли вона активна, і в маленькому регістрі, коли вона не активна.
+// клавіша enter – має переносити наступний текст, який буде друкуватись на новий рядок
+// клавіша backspace – має видаляти текст по одній букві, при кліканні на клавішу, і при постійному утриманні клавіші, текст повинен видалятись із швидкістю 3 букви на секунду.
+// клавіші shift – мають робити текст у верхньому регістрі при утриманні даної клавіші

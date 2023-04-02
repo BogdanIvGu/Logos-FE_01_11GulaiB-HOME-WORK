@@ -40,13 +40,13 @@ blocks.forEach(function(block, index) {
         this.style.backgroundPosition = 'center';
         this.style.backgroundRepeat = 'no-repeat';
         
-         saveButtons[index].addEventListener('click', function() {
-             if (imageUrl) {
-                 let link = document.createElement('a');
-                 link.href = imageUrl;
-                 link.download = true;
-                 link.click();
-             }
-         });
+        //  saveButtons[index].addEventListener('click', function() {
+        //      if (imageUrl) {
+        //          let link = document.createElement('a');
+        //          link.href = imageUrl;
+        //          link.download = true;
+        //          link.click();
+        //      }
+        //  });
      });
 });
