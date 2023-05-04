@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Додаток для черги</h1>
+    <h2>Створення черги</h2>
+    <form>
+      <label for="queue-name">Назва черги:</label>
+      <input type="text" id="queue-name" name="queue-name" required>
+      <button type="submit">Створити чергу</button>
+    </form>
+    <h2>Вхід у чергу</h2>
+    <p>Отскануйте QR-код для входу в чергу:</p>
+    <img src="path/to/qr-code.png" alt="QR-код для входу в чергу">
+    <p>Інформація про чергу:</p>
+    <ul>
+      <li>Назва черги: <span id="queue-name-display"></span></li>
+      <li>Час створення черги: <span id="queue-time-display"></span></li>
+      <li>Ваш ідентифікатор: <span id="user-id-display"></span></li>
+      <li>Ваш номер в черзі: <span id="user-position-display"></span></li>
+    </ul>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,15 +1,27 @@
+// Отримуємо необхідні елементи
+// let colorHeading = document.querySelector('.color');
+// const imageHeading = document.querySelector('.image');
+// const colorList = document.querySelectorAll('[data-color]');
+// const imageList = document.querySelectorAll('[data-image]');
+// const containerUl = document.querySelector('container');
 
-let colors = ['red', 'yellow', 'green'];
-let index = 0;
+// colorHeading.addEventListener('mouseover', function() {
+//   this.style.backgroundColor = 'purple';
+//   this.style.borderRadius = '10px';
+//   this.style.borderColor = 'orange';
+//   this.text.content = 'Обери колір';
+//   containerUl.style.display = 'block';
 
-function changeColor() {
-    let block = document.getElementById('block');
-    block.style.backgroundColor = colors[index];
-    index = (index + 1) % colors.length;
-}
+// });
 
-let block = document.getElementById('block');
-block.addEventListener('mouseover', changeColor);
-block.addEventListener('mouseout', function() {
-    this.style.backgroundColor = 'purple';
-});
+
+window.addEventListener('keydown', function (event){
+  console.log('Event', event);
+})
+
+
+// при кліку на текст колір появляється блок з кольорами
+// при кліку на текст зображення появляється блок з зображеннями
+// при кліку на самі блоки з кольорами змінюється колі фону
+// при кліку на самі блоки з зображеннями змінюється зображення фону
+// послідовність чи я задаю колір фону а потім зображення або навпаки не має значення

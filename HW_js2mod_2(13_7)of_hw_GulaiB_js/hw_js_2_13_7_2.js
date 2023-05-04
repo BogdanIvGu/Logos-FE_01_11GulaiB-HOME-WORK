@@ -1,5 +1,5 @@
 const keys = document.querySelectorAll('.key');
-const inputField = document.getElementById('input-field');
+const inputField = document.getElementById('textarea');
 const capsLock = document.querySelector('.capslock');
 
 let backspaceIntervalId;
@@ -14,11 +14,14 @@ const insertTab = () => {
 
 
 const insertNewline = () => {
-  const start = inputField.selectionStart;
-  const end = inputField.selectionEnd;
-  const currentValue = inputField.value;
-  inputField.value = currentValue.substring(0, start) + '\n' + currentValue.substring(end);
-  inputField.selectionStart = inputField.selectionEnd = start + 1;
+  const prev = inputField.value
+  inputField.value = prev + '\n' ;
+  // const start = inputField.selectionStart;
+  // const end = inputField.selectionEnd;
+  // const currentValue = inputField.value;
+  // inputField.value = currentValue.substring(0, start) + '\n' + currentValue.substring(end);
+  // inputField.selectionStart = inputField.selectionEnd = start + 1;
+  
 };
 
 
