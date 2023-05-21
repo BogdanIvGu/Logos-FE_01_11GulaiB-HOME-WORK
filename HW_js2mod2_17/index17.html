@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17</title>
+    <link rel="stylesheet" href="./style17.css">
+
+</head>
+
+<body>
+    <div class="first_block">
+        <div class="data"></div>
+        <div class="clock"></div>
+    </div>
+
+    <div class="stopwatch">
+        <div class="stopwatch_left">
+            <div class="stopwatch_DG">00:00:00</div>
+            <div class="buttonAll">
+                <div class="start buttom">
+                    <button class="btn btnStart" onclick="start()">start</button>
+                </div>
+                <div class="loop buttom">
+                    <button class="btn btnStop" onclick="loop()">loop</button>
+                </div>
+                <div class="stop buttom">
+                    <button class="btn btnStop" onclick="stop()">stop</button>
+                </div>
+                <div class="reset buttom">
+                    <button class="btn btnReset" onclick="reset()">reset</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="stopwatch_right">
+        <div class="stopwatch_save"></div>
+    </div>
+    </div>
+
+
+    <div class="countdown_timer">
+        <div class="leftBlock">
+            <div class="setTime">00</div>
+            <div class="minutes">minutes</div>
+            <div class="BtnSet">
+                <div class="BtnSetTime btnPlus"><div class="btnT">+</div></div>
+                <div class="BtnSetTime btnMinus"><div class="btnT">-</div></div>
+            </div>
+        </div>
+
+        <div class="rightBlock">
+            <div class="timerCounter">00:00</div>
+            <div class="btnTimer">
+                <div class="Timer buttom">
+                    <button class="btn btnStartT" onclick="startTimeT()">start</button>
+                </div>
+                <div class="stop buttom">
+                    <button class="btn btnStopT" onclick="stopTimeT()">stop</button>
+                </div>
+                <div class="reset buttom">
+                    <button class="btn btnResetT" onclick="resetTimeT()">reset</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="./script17.js"></script>
+</body>
+
+</html>
