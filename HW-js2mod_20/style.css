@@ -1,0 +1,39 @@
+.forms {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.firstNameContainer {
+    position: relative;
+}
+
+.input {
+    margin: 10px;
+    width: 300px;
+    height: 20px;
+    padding: 2.5px;
+    border-radius: 4px;
+    border: 1px solid gainsboro;
+}
+
+.inputLabel {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    transition-duration: 0.3s;
+    pointer-events: none;
+    font-size: 14px;
+    color: gray;
+    background-color: white;
+}
+
+.input:focus+.inputLabel {
+    font-size: 10px;
+    top: 5px;
+    left: 20px;
+    transform: none;
+    color: red;
+}

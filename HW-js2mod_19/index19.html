@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    
+  </head>
+
+  <body>
+    <div class="forms">
+      <h2 class="signUpInfo">Please sign up</h2>
+      <form>
+        <!-- firstName -->
+        <!-- alert добавити  клас alert -->
+        <div class="firstNameContainer inputContainer">
+          <input class="input" type="text" id="firstName" />
+
+          <!-- inputLabelFocus добавити клас на онклік-->
+          <label class="inputLabel" for="my-input">First Name</label>
+        </div>
+        <!-- alert -->
+        <!-- <div class=" validfirstName"> -->
+        <span class="validationInfo invisible">
+          Plese provide a valid <span class="validInfo"></span>
+        </span>
+        <!-- </div> -->
+        <!-- secondName -->
+        <div class="secondNameContainer inputContainer">
+          <input
+            class="input"
+            type="text"
+            id="second-name"
+            name="second-name"
+          />
+          <label class="inputLabel" for="my-input">Second Name</label>
+        </div>
+        <!-- email -->
+        <div class="emailContainer inputContainer">
+          <input class="input" type="email" id="email" name="email" />
+          <label class="inputLabel" for="my-input">Email</label>
+        </div>
+        <!-- password -->
+        <div class="passwordContainer inputContainer">
+          <input class="input" type="password" id="password" name="password" />
+          <label class="inputLabel" for="my-input">Password</label>
+        </div>
+        <!-- checkbox -->
+        <div class="checkboxContainer">
+          <input class="checkbox" type="checkbox" id="agree" name="agree" />
+          <label class="agree" for="agree">I agree with Privacy Policy.</label
+          ><br />
+        </div>
+        <input class="input SignUp" type="submit" value="Sign Up" />
+      </form>
+    </div>
+
+    <div class="success">
+      <div class="checkmark-container">
+        <div class="checked">
+        <img class="checkedIcon" src="./circle-check-regular.svg" alt="checked" width="10%">
+        </div>
+      </div>
+      <div class="start">
+        <h1>Great!</h1>
+        <p>Your account has been created successfully.</p>
+        <button type="button" class="btnStart">Start Exploring</button>
+      </div>
+    </div>
+
+    <script src="./script19.js"></script>
+  </body>
+</html>
