@@ -15,11 +15,11 @@
       <form>
         <!-- firstName -->
         <!-- alert добавити  клас alert -->
-        <div class="firstNameContainer inputContainer">
+        <div class="firstNameContainer inputContainer ">
           <input class="input" type="text" id="firstName" />
 
           <!-- inputLabelFocus добавити клас на онклік-->
-          <label class="inputLabel" for="my-input">First Name</label>
+          <label class="inputLabel" id="labelFn" for="my-input">First Name</label>
         </div>
         <!-- alert -->
         <!-- <div class=" validfirstName"> -->
@@ -27,37 +27,61 @@
           Plese provide a valid <span class="validInfo"></span>
         </span>
         <!-- </div> -->
+
+
+
         <!-- secondName -->
         <div class="secondNameContainer inputContainer">
           <input
             class="input"
             type="text"
-            id="second-name"
-            name="second-name"
+            id="secondName"
           />
-          <label class="inputLabel" for="my-input">Second Name</label>
+          <label class="inputLabelSN"  id="labelSn" for="my-input">Second Name</label>
         </div>
+         <span class="validationInfoSN invisible">
+          Plese provide a valid <span class="validInfoSN"></span>
+        </span>
+
+
+
         <!-- email -->
         <div class="emailContainer inputContainer">
           <input class="input" type="email" id="email" name="email" />
-          <label class="inputLabel" for="my-input">Email</label>
+          <label class="inputLabelEM" id="labelEM"  for="my-input">Email</label>
         </div>
+        <span class="validationInfoEM invisible">
+          Plese provide a valid <span class="validInfoEM"></span>
+        </span>
+
+
+
         <!-- password -->
         <div class="passwordContainer inputContainer">
           <input class="input" type="password" id="password" name="password" />
-          <label class="inputLabel" for="my-input">Password</label>
+          <label class="inputLabelPS" id="labelPS" for="my-input">Password</label>
         </div>
+        <span class="validationInfoPS invisible">
+          Plese provide a valid <span class="validInfoPS"></span>
+        </span>
+
+
+
         <!-- checkbox -->
         <div class="checkboxContainer">
           <input class="checkbox" type="checkbox" id="agree" name="agree" />
           <label class="agree" for="agree">I agree with Privacy Policy.</label
           ><br />
         </div>
-        <input class="input SignUp" type="submit" value="Sign Up" />
+        <input class="input SignUp" type="submit" id="signUpBtn" value="Sign Up" disabled />
       </form>
     </div>
 
-    <div class="success">
+
+
+
+<!-- success -->
+    <div class="success invisible">
       <div class="checkmark-container">
         <div class="checked">
         <img class="checkedIcon" src="./circle-check-regular.svg" alt="checked" width="10%">
@@ -66,7 +90,7 @@
       <div class="start">
         <h1>Great!</h1>
         <p>Your account has been created successfully.</p>
-        <button type="button" class="btnStart">Start Exploring</button>
+        <button type="button" class="btnStart" id="startBtn">Start Exploring</button>
       </div>
     </div>
 
