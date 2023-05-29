@@ -1,6 +1,6 @@
 
 let getId = id => document.getElementById(id);
-const inputLabel = document.querySelector('.inputLabel');
+const inputLabelFn = document.querySelector('.inputLabelFn');
 const inputLabelSN = document.querySelector('.inputLabelSN');
 const inputLabelEM = document.querySelector('.inputLabelEM');
 const inputLabelPS = document.querySelector('.inputLabelPS');
@@ -8,28 +8,28 @@ const firstName = document.querySelector('#firstName');
 const secondName = document.querySelector('#secondName');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
-let testFirstName = /^[a-zA-Z]{1,20}$/;
-let testSecondName = /^[a-zA-Z]{1,20}$/;
+let testFirstName = /^[a-zA-Z]{2,20}$/;
+let testSecondName = /^[a-zA-Z]{2,20}$/;
 let testEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let testPassword = /^[a-zA-Z0-9]{8,15}$/;
 
 // firstName
 firstName.addEventListener('mouseover', function() {
-  inputLabel.classList.add('inputLabelFocus');
+  inputLabelFn.classList.add('inputLabelFocus');
 });
 
 firstName.addEventListener('mouseout', function() {
   if (!firstName.value.trim()) {
-    inputLabel.classList.remove('inputLabelFocus');
+    inputLabelFn.classList.remove('inputLabelFocus');
   }
 
 });
 
 firstName.addEventListener('input', function() {
   if (this.value.trim()) {
-    inputLabel.classList.add('inputLabelFocus');
+    inputLabelFn.classList.add('inputLabelFocus');
   } else {
-    inputLabel.classList.remove('inputLabelFocus');
+    inputLabelFn.classList.remove('inputLabelFocus');
   }
 });
 
@@ -37,14 +37,17 @@ firstName.addEventListener('input', function() {
 
 firstName.addEventListener('input', function() {
   const firstName = this.value.trim();
-  const validInfo = document.querySelector('.validInfo')
+  const validInfo = document.querySelector('.validInfo');
   const validationInfo = document.querySelector('.validationInfo');
+
+
   if (isValidFirstName(firstName)) {
    validationInfo.classList.add('invisible');
     document.querySelector('.firstNameContainer').classList.remove('inputContainerValidNo');
     document.querySelector('.firstNameContainer').classList.add('inputContainerValidYes');
     document.querySelector('.inputLabelFocus').classList.add('Yes');
-    firstName.classList.add('greenBorder');
+    document.querySelector('#firstName').classList.add('greenBorder');
+    
     
   
   } else {
@@ -85,14 +88,14 @@ secondName.addEventListener('input', function() {
 
 secondName.addEventListener('input', function() {
   const secondName = this.value.trim();
-  const validInfoSN = document.querySelector('.validInfoSN')
+  const validInfoSN = document.querySelector('.validInfoSN');
   const validationInfoSN = document.querySelector('.validationInfoSN');
   if (isValidSecondName(secondName)) {
-   validationInfo.classList.add('invisible');
+   validationInfoSN .classList.add('invisible');
     document.querySelector('.secondNameContainer').classList.remove('inputContainerValidNo');
     document.querySelector('.secondNameContainer').classList.add('inputContainerValidYes');
     document.querySelector('.inputLabelFocusSN').classList.add('Yes');
-    firstName.classList.add('greenBorder');
+    document.querySelector('#secondName').classList.add('greenBorder');
     
   
   } else {
@@ -103,7 +106,7 @@ secondName.addEventListener('input', function() {
   }
 });
 
-function isValidSecondName(secondName) {
+function isValidSecondName(secondName){
   return testSecondName.test(secondName);
 }
 
@@ -131,14 +134,14 @@ email.addEventListener('input', function() {
 
 email.addEventListener('input', function() {
   const email = this.value.trim();
-  const validInfoEM = document.querySelector('.validInfoEM')
+  const validInfoEM = document.querySelector('.validInfoEM');
   const validationInfoEM = document.querySelector('.validationInfoEM');
   if (isValidEmail(email)) {
    validationInfoEM.classList.add('invisible');
     document.querySelector('.emailContainer').classList.remove('inputContainerValidNo');
     document.querySelector('.emailContainer').classList.add('inputContainerValidYes');
     document.querySelector('.inputLabelFocusEM').classList.add('Yes');
-    email.classList.add('greenBorder');
+    document.querySelector('#email').classList.add('greenBorder');
     
   
   } else {
@@ -156,7 +159,7 @@ function isValidEmail(email) {
 // password
 
 password.addEventListener('mouseover', function() {
-  inputLabelEM.classList.add('inputLabelFocusPS');
+  inputLabelPS.classList.add('inputLabelFocusPS');
 });
 
 password.addEventListener('mouseout', function() {
@@ -178,14 +181,14 @@ password.addEventListener('input', function() {
 
 password.addEventListener('input', function() {
   const password = this.value.trim();
-  const validInfoPS = document.querySelector('.validInfo')
+  const validInfoPS = document.querySelector('.validInfoPS');
   const validationInfoPS = document.querySelector('.validationInfoPS');
   if (isValidPassword(password)) {
    validationInfoPS.classList.add('invisible');
     document.querySelector('.passwordContainer').classList.remove('inputContainerValidNo');
     document.querySelector('.passwordContainer').classList.add('inputContainerValidYes');
     document.querySelector('.inputLabelFocusPS').classList.add('Yes');
-    password.classList.add('greenBorder');
+    document.querySelector('#password').classList.add('greenBorder');
     
   
   } else {
@@ -201,29 +204,78 @@ function isValidPassword(password) {
 }
 
 
-// розюлокування кнопки Sign Up при клікнутому чекбоксу
-const checkbox = getId('agree');
+
+
+// Checkbox
+// автоматичне заповнення чекбокса при валідності
+  
+function checkAllValidations() {
+  const firstNameValid = isValidFirstName(firstName.value);
+  const secondNameValid = isValidSecondName(secondName.value);
+  const emailValid = isValidEmail(email.value);
+  const passwordValid = isValidPassword(password.value);
+    if (firstNameValid && secondNameValid && emailValid && passwordValid) {
+      checkbox.checked = true;
+      signUpBtn.disabled = false;
+  } else {
+      checkbox.checked = false;
+      signUpBtn.disabled = true;
+  }
+}
+
+// Викликаємо функцію при зміні будь-якого з полів
+firstName.addEventListener('input', checkAllValidations);
+secondName.addEventListener('input', checkAllValidations);
+email.addEventListener('input', checkAllValidations);
+password.addEventListener('input', checkAllValidations);
+
+// завершення автоматичне заповнення чекбокса при валідності
+
+
+
+const checkbox = document.querySelector('.checkbox');
 const signUpBtn = getId('signUpBtn');
 
-  checkbox.addEventListener('change', function() {
-    signUpBtn.disabled = !this.checked;
-  });
+function isAllValid() {
+  if (firstNameValid && secondNameValid && emailValid && passwordValid && checkbox.checked) {
+    signUpBtn.disabled = false;
+  }
+  else {
+signUpBtn.disabled = true;
+  }
+
+// окремо валідація з чекбоксом
+  checkbox.addEventListener('change', function () {
+  if (
+    isValidFirstName(firstName.value) &&
+    isValidSecondName(secondName.value) &&
+    isValidEmail(email.value) &&
+    isValidPassword(password.value) &&
+    this.checked
+  ) {
+    signUpBtn.disabled = false;
+    // document.querySelector('.SignUp').classList.add('greenBorder');
+  } else {
+    signUpBtn.disabled = true;
+  }
+}); 
+}
+
+
+
+
 
 // signUpButton active
 
 signUpBtn.addEventListener('mousedown', function() {
   document.querySelector('.success').classList.remove('invisible');
-  console.log('remove invisible')
+  console.log('remove invisible');
 });
 
 // btnStart
 
 let startBtn = getId('startBtn');
-startBtn.addEventListener('click' , function() {
-document.querySelector('.success').classList.add('invisible');
-location.reload();  
-})
-
-
-
-
+startBtn.addEventListener('click', function() {
+  document.querySelector('.success').classList.add('invisible');
+  location.reload();
+});

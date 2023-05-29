@@ -36,6 +36,10 @@
 border-color: green;
 }
 
+.redBorder {
+    border-color: rgb(177, 1, 1);
+}
+
 .checkboxContainer{
     display: flex;
     flex-direction: row;
@@ -70,7 +74,7 @@ align-items: center;
     width: 300px;
 }
 
-.inputLabel, .inputLabelSN, .inputLabelEM,
+.inputLabelFn, .inputLabelSN, .inputLabelEM,
 .inputLabelPS {
     position: absolute;
     top: 50%;
@@ -79,7 +83,7 @@ align-items: center;
     transition-duration: 0.5s;
     pointer-events: none;
     font-size: 14px;
-    color: gray;
+    color: rgb(170, 170, 170);
     background-color: white;
 }
 
@@ -87,7 +91,7 @@ align-items: center;
 /* .inputLabelFocus добавляємо клас на онклік*/
 .inputLabelFocus, .inputLabelFocusSN, .inputLabelFocusEM, .inputLabelFocusPS  {
     font-size: 8px;
-    background-color: rgb(104, 99, 99);
+    background-color: rgb(158, 154, 154);
     top: 5px;
     padding: 2px;
     border-radius: 2px;
@@ -106,9 +110,7 @@ position: relative;
 /* .validfirstName{
     position: relative;
 } */
-.validationInfo, .validationInfoSN,
-.validationInfoEM,
-.validationInfoPS{
+.validationInfo {
     position: absolute;
     width: 130px;
 font-size: 8px;
@@ -121,6 +123,46 @@ font-size: 8px;
     background-color: rgb(249, 74, 74);
 }
 
+
+.validationInfoSN {
+    position: absolute;
+    width: 130px;
+    font-size: 8px;
+    top: 122px;
+    padding: 4px;
+    border-radius: 2px;
+    left: 10px;
+    transform: none;
+    color: white;
+    background-color: rgb(228, 45, 45);
+}
+
+
+.validationInfoEM {
+    position: absolute;
+    width: 130px;
+    font-size: 8px;
+    top: 173px;
+    padding: 4px;
+    border-radius: 2px;
+    left: 10px;
+    transform: none;
+    color: white;
+    background-color: rgb(221, 39, 39);
+}
+
+.validationInfoPS {
+    position: absolute;
+    width: 130px;
+    font-size: 8px;
+    top: 225px;
+    padding: 4px;
+    border-radius: 2px;
+    left: 10px;
+    transform: none;
+    color: white;
+    background-color: rgb(173, 34, 34);
+}
 
 /* invisible */
 .invisible{
@@ -217,10 +259,11 @@ h1{
 p{
     margin: 5px;
     color: rgb(109, 105, 105);
+    text-align: center;
 }
 
 .btnStart{
-    top: 225px;
+    top: 250px;
     position: absolute;
     width: 150px;
     height: 30px;
