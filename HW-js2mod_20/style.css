@@ -1,39 +1,176 @@
-.forms {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+body{
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
-.firstNameContainer {
-    position: relative;
+.mainContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.input {
-    margin: 10px;
-    width: 300px;
-    height: 20px;
-    padding: 2.5px;
-    border-radius: 4px;
-    border: 1px solid gainsboro;
+/* <!-- Ліва сторона --> */
+.leftSide{
+   margin: 50px 10px 10px 20px;
+    width: 500px;
+}
+.forms{
 }
 
-.inputLabel {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    transition-duration: 0.3s;
-    pointer-events: none;
-    font-size: 14px;
-    color: gray;
+.inputContainer{
+    margin: 25px 0px;
+}
+
+.Label{
+margin-bottom: 10px ;
+}
+
+.input{
+margin-top: 5px;
+padding: 10px 5px 5px 5px;
+width: 400px;
+border-radius: 5px;
+border: 2px grey solid;
+}
+
+input:hover{
+border: 2px green solid;
+}
+input:active{
+border: 2px rgb(4, 125, 136) solid;
+}
+
+/* addUser */
+.addUser{
+    padding: 5px 10px;
     background-color: white;
+    border-radius: 5px;
+    border-color: rgb(21, 105, 21);
+    color: black;
+    
+}
+.addUser:hover{
+    border-color: green;
+    color: green;
+}
+.addUser:active{
+    background-color: green;
+    border-color: green;
+    color: white;
+    scale: 1.1;
 }
 
-.input:focus+.inputLabel {
-    font-size: 10px;
-    top: 5px;
-    left: 20px;
-    transform: none;
-    color: red;
+
+/* editUser */
+.editUser {
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 5px;
+    border-color: rgb(21, 105, 21);
+    color: black;
 }
+
+.editUser:hover {
+    border-color: green;
+    color: green;
+}
+
+.editUser:active {
+    background-color: green;
+    border-color: green;
+    color: white;
+    scale: 1.1;
+}
+
+/* приховання кнопки */
+.hidden {
+    display: none;
+}
+  /* <!-- Права сторона --> */
+ .rightSide{
+    margin: 100px 10px 10px 20px;
+    width: 500px;
+ }
+
+/* table */
+table {
+    border-collapse: collapse;
+}
+.tHead{
+    border-bottom: 3px rgb(121, 120, 120) solid;
+    border-top: 2px rgb(121, 120, 120) solid;
+    margin: 15px 5px;
+}
+
+th {
+
+padding: 15px 5px;
+}
+td {
+    padding: 15px 5px;
+    color: rgb(81, 81, 81);
+}
+.trBody{
+    border-bottom: 2px rgb(121, 120, 120) solid;
+}
+
+.thNumber {
+    width: 10px;
+}
+
+.thLogin {
+    width: 150px;
+    
+}
+
+.thPassword {
+    width: 250px;
+}
+
+.thEmail {
+    width: 250px;
+}
+
+.thEdit {
+    width: 100px;
+}
+.thDelete{
+    width: 120px;
+}
+
+
+
+/* buttom */
+.btnEdit{
+color: black;
+background-color: rgb(251, 190, 103);
+border-radius: 3px;
+border-style: inherit;
+padding: 10px 15px;
+}
+
+.btnEdit:hover{
+    background-color: rgb(246, 164, 48);
+}
+.btnEdit:active{
+scale: 1.1;
+}
+
+
+.btnDelete{
+color: white;
+background-color: rgb(245, 47, 86);
+border-radius: 3px;
+border-style: inherit;
+padding: 10px 15px;
+}
+
+.btnDelete:hover {
+    background-color: rgb(194, 22, 57);
+}
+
+.btnDelete:active {
+    scale: 1.1;
+}
+
+

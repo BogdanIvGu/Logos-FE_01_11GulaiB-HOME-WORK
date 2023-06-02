@@ -1,26 +1,85 @@
-
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
 
-    
-<div class="forms">
-      <form>
-        <div class="firstNameContainer">
-          <input class="input" type="text" id="firstName" />
-          <label class="inputLabel" for="firstName">First Name</label>
-        </div>
-      </form>
-    </div>
-    
-    <script src="./script20.js"></script>
-  </body>
+</head>
+
+<body>
+  <main class="mainContent">
+    <!-- Ліва сторона -->
+    <div class="leftSide">
+      <div class="forms">
+        <form>
+          <div class="loginContainer inputContainer ">
+            <label class="LabelFn Label" id="labelFn" for="firstName">Login</label><br>
+            <input class="input" type="text" id="firstName" placeholder="Enter login" />
+          </div>
+
+
+          <!-- password -->
+          <div class="passwordContainer inputContainer">
+            <label class="LabelPS Lable" id="labelPS" for="password">Password</label><br>
+            <input class="input" type="password" id="password" name="password" placeholder="Enter password" />
+          </div>
+
+
+          <!-- email -->
+          <div class="emailContainer inputContainer">
+            <label class="LabelEM Lable" id="labelEM" for="email">Email address</label><br>
+            <input class="input" type="email" id="email" name="email" placeholder="Enter email" />
+          </div>
+
+          <!-- Add user -->
+          <input class="addUser " type="submit" id="addUser" value="Add user" />
+          <input class="editser hidden " type="submit" id="editUser" value="Edit user" />
+        </form>
+      </div>
+      </div>
+
+
+      <!-- Права сторона -->
+
+      <div class="rightSide">
+        <table>
+          <thead class="tHead">
+            <tr class="trHead">
+              <th class="thNumber" >#</th>
+              <th class="thLogin">Login</th>
+              <th class="thPassword" >Password</th>
+              <th class="thEmail" >Email</th>
+              <th class="thEdit" >Edit</th>
+              <th class="thDelete">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr class="trBody">
+              <td>1</td>
+              <td>JohnDoe</td>
+              <td>********</td>
+              <td>johndoe@example.com</td>
+              <td><button class="btnEdit">Edit</button></td>
+              <td><button class="btnDelete">Delete</button></td>
+            </tr>
+            <tr class="trBody">
+              <td>2</td>
+              <td>JohnDoe</td>
+              <td>********</td>
+              <td>johndoe@example.com</td>
+              <td><button class="btnEdit">Edit</button></td>
+              <td><button class="btnDelete">Delete</button></td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+  </main>
+  <script src="./script20.js"></script>
+</body>
+
 </html>

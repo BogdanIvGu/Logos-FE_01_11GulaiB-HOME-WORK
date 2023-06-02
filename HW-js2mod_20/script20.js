@@ -1,138 +1,211 @@
-// Завдання 1. forEach
-// Заданий масив з числами. Знайдіть суму цих чисел.
-// let arr = [5, 6, 7, 8, 9];
-// Результат вивести в консоль.
+// Отримання елементів DOM
+    const form = document.querySelector('form');
+    const addUserBtn = document.querySelector('#addUser');
+    const editUserBtn = document.querySelector('#editUser');
+    const tableBody = document.querySelector('tbody');
 
-let arr1 = [5, 6, 7, 8, 9];
-let sum = 0;
-arr1.forEach(element => {
-    sum += element;
-});
-console.log(sum);
+    // Масив користувачів
+    const users = [];
 
+    // Функція додавання користувача
+    function addUser() {
+      // Отримання даних з полів форми
+      const loginInput = document.querySelector('#firstName');
+      const passwordInput = document.querySelector('#password');
+      const emailInput = document.querySelector('#email');
 
-// ------------------------------------------------------------------------------------------
-// Завдання 2. Map
-// Заданий масив з числами. Створіть новий масив, що складається з квадратів цих чисел.
-// let arr = [5, 6, 7, 8, 9];
-// Результат вивести в консоль.
+      // Валідація полів форми
+      if (!validateLogin(loginInput.value)) {
+        alert('Invalid login');
+        return;
+      }
+      if (!validatePassword(passwordInput.value)) {
+        alert('Invalid password');
+        return;
+      }
+      if (!validateEmail(emailInput.value)) {
+        alert('Invalid email');
+        return;
+      }
 
-let arr2 = [5, 6, 7, 8, 9];
-let square = arr2.map(number => number * number);
-console.log(square);
+      // Створення об'єкта користувача
+      const user = {
+        login: loginInput.value,
+        password: passwordInput.value,
+        email: emailInput.value,
+      };
 
-// ------------------------------------------------------------------------------------------
-// Завдання 3. Every
-// Заданий масив об’єктів. Перевірте, чи всі ключі country мають значення 'Ukraine'.
-// let arr = [{name: 'Ivan', country: 'Ukraine'},
-// {name: 'Petro', country: 'Ukraine'},
-// {name: 'Miguel', country: 'Cuba'}
-// ]
-// Результат вивести в консоль.
+      // Додавання користувача до масиву
+      users.push(user);
 
-let arr3 = [
-{ name: 'Ivan', country: 'Ukraine' },
-{name: 'Petro', country: 'Ukraine'},
-{name: 'Miguel', country: 'Cuba'}
-]
+      // Очищення полів форми
+      loginInput.value = '';
+      passwordInput.value = '';
+      emailInput.value = '';
 
-let checkUkraine = arr3.every(item => item.country.toLowerCase() == 'Ukraine');
-console.log(checkUkraine);
-
-
-// let allInUkraine = arr3.every(function(obj) {
-//   return obj.country === 'Ukraine';
-// });
-
-// console.log(allInUkraine);
-
-// ------------------------------------------------------------------------------------------
-
-// Завдання 4. Some
-// Заданий масив об’єктів. Перевірте, чи всі хоч один ключ country має значення 'Cuba'.
-// let arr = [{name: 'Ivan', country: 'Ukraine'},
-// {name: 'Petro', country: 'Ukraine'},
-// {name: 'Miguel', country: 'Cuba'}
-// ]
-// Результат вивести в консоль.
-
-let arr4 = [{name: 'Ivan', country: 'Ukraine'},
-    {
-        name: 'Petro',
-        country: 'Ukraine'
-    },
-    {
-        name: 'Miguel',
-        country: 'Cuba'
+      // Перегенерація таблиці
+      renderTable();
     }
-]
 
-let isSomeCuba = arr4.some(item => item.country.toLowerCase() == 'cuba');
-console.log(isSomeCuba);
+    // Функція видалення користувача
+    function deleteUser(index) {
+      // Видалення користувача з масиву за індексом
+      users.splice(index, 1);
 
+      // Перегенерація таблиці
+      renderTable();
+    }
 
+    // Функція редагування користувача
+    function editUser(index) {
+      // Отримання об'єкта користувача за індексом
+      const user = users[index];
 
-// ------------------------------------------------------------------------------------------
+      // Заповнення полів форми даними користувача
+      document.querySelector('#firstName').value = user.login;
+      document.querySelector('#password').value = user.password;
+      document.querySelector('#email').value = user.email;
 
-// Завдання 5. Filter
-// Заданий масив значень, в ньому можуть бути звичайні елементи і підмасиви. Залиште в ньому тільки підмасиви.
-// let arr = [1, 'string', [3, 4], 5, [6, 7]];
-// Результат вивести в консоль.
+      // Запам'ятовування індексу користувача
+      editUserBtn.dataset.index = index;
 
-let arr5 = [1, 'string', [3, 4], 5, [6, 7]];
-let subArrays = arr5.filter(function (element) {
-    return Array.isArray(element);
-});
-console.log(subArrays);
+      // Показуємо кнопку Edit user і приховуємо Add user
+      editUserBtn.style.display = 'block';
+      addUserBtn.style.display = 'none';
+    }
 
+    // Функція збереження редагованого користувача
+    function saveEditUser() {
+      // Отримання індексу редагованого користувача
+      const index = editUserBtn.dataset.index;
 
+      // Отримання даних з полів форми
+      const loginInput = document.querySelector('#firstName');
+      const passwordInput = document.querySelector('#password');
+      const emailInput = document.querySelector('#email');
 
-// ------------------------------------------------------------------------------------------
+      // Валідація полів форми
+      if (!validateLogin(loginInput.value)) {
+        alert('Invalid login');
+        return;
+      }
+      if (!validatePassword(passwordInput.value)) {
+        alert('Invalid password');
+        return;
+      }
+      if (!validateEmail(emailInput.value)) {
+        alert('Invalid email');
+        return;
+      }
 
-// Завдання 6. Reduce
-// Заданий масив з числами. Знайдіть суму перших N елементів до першого нуля.
-// Приклад: [1, 2, 3, 0, 4, 5, 6] - підсумовуємо перші 3 елементи, так як далі стоїть елемент з числом 0.
-// let arr = [1, 2, 5, 0, 4, 5, 6];
-// Результат вивести в консоль.
-let arr6a = [1, 2, 5, 0, 4, 5, 6];
+      // Оновлення даних редагованого користувача в масиві
+      users[index].login = loginInput.value;
+      users[index].password = passwordInput.value;
+      users[index].email = emailInput.value;
 
-let sumToZero = arr6a.reduce(function(acc, curr) {
-  if (curr === 0) {
-    acc.finished = true;
-  }
-  if (!acc.finished) {
-    acc.total += curr;
-  }
-  return acc;
-}, { total: 0, finished: false });
+      // Очищення полів форми
+      loginInput.value = '';
+      passwordInput.value = '';
+      emailInput.value = '';
 
-console.log(sumToZero.total);
+      // Приховування кнопки Edit user і показ кнопки Add user
+      editUserBtn.style.display = 'none';
+      addUserBtn.style.display = 'block';
 
-// Заданий масив з числами. Дізнайтеся скільки елементів з початку масиву треба скласти, щоб в сумі вийшло більше 10-ти.
-// let arr = [1, 2, 3, 0, 4, 5, 6];
-// Результат вивести в консоль.
+      // Перегенерація таблиці
+      renderTable();
+    }
 
-let arr6b = [1, 2, 3, 0, 4, 5, 6];
-let count = arr6b.reduce(function(acc, curr, index) {
-  if (acc.sum < 10) {
-    acc.sum += curr;
-    acc.count++;
-  }
-  return acc;
-}, { sum: 0, count: 0 });
+    // Функція генерації таблиці
+    function renderTable() {
+      // Очищення таблиці
+      tableBody.innerHTML = '';
 
-console.log(count.count);
+      // Генерація рядків таблиці на основі масиву користувачів
+      users.forEach((user, index) => {
+        const row = document.createElement('tr');
+        row.classList.add('trBody');
 
+        // Номер рядка
+        const numberCell = document.createElement('td');
+        numberCell.textContent = index + 1;
+        row.appendChild(numberCell);
 
+        // Логін
+        const loginCell = document.createElement('td');
+        loginCell.textContent = user.login;
+        row.appendChild(loginCell);
 
-// ------------------------------------------------------------------------------------------
+        // Пароль
+        const passwordCell = document.createElement('td');
+        passwordCell.textContent = user.password;
+        row.appendChild(passwordCell);
 
-// Завдання 7. Любим методом
-//Заданий масив з числами. Залиште в ньому тільки позитивні числа. Потім вийміть квадратний корінь і цих чисел.
-// let arr = [1, -2, 3, 0, 4, -5, 6, -11];
-// Результат вивести в консоль.
+        // Email
+        const emailCell = document.createElement('td');
+        emailCell.textContent = user.email;
+        row.appendChild(emailCell);
 
-let arr7 = [1, -2, 3, 0, 4, -5, 6, -11];
+        // Кнопка Edit
+        const editCell = document.createElement('td');
+        const editButton = document.createElement('button');
+        editButton.classList.add('btnEdit');
+        editButton.textContent = 'Edit';
+        editButton.addEventListener('click', () => {
+          editUser(index);
+        });
+        editCell.appendChild(editButton);
+        row.appendChild(editCell);
 
-let result = arr7.filter(num => num > 0).map(num => Math.sqrt(num)); 
-console.log(result); 
+        // Кнопка Delete
+        const deleteCell = document.createElement('td');
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('btnDelete');
+        deleteButton.textContent = 'Delete';
+        deleteButton.addEventListener('click', () => {
+          deleteUser(index);
+        });
+        deleteCell.appendChild(deleteButton);
+        row.appendChild(deleteCell);
+
+        // Додавання рядка до таблиці
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Валідація логіна
+    function validateLogin(login) {
+      // Реалізація валідації логіна
+     const loginRegex = /^[a-zA-Z]{4,16}$/;
+  return loginRegex.test(login);
+    }
+
+    // Валідація пароля
+    function validatePassword(password) {
+      // Реалізація валідації пароля
+      const passwordRegex = /^[a-zA-Z0-9_.-]{4,16}$/;
+  return passwordRegex.test(password);
+    }
+
+    // Валідація електронної пошти
+    function validateEmail(email) {
+      // Реалізація валідації електронної пошти
+      const emailRegex = /\S+@\S+\.\S+/;
+      return emailRegex.test(email);
+    }
+
+    // Обробка події подачі форми
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      addUser();
+    });
+
+    // Обробка події кліку на кнопку Edit user
+    editUserBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      saveEditUser();
+    });
+
+    // Початкова генерація таблиці
+renderTable();
+    
