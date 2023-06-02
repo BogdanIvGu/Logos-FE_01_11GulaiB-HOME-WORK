@@ -73,12 +73,14 @@ border: 2px rgb(4, 125, 136) solid;
   /* <!-- Права сторона --> */
  .rightSide{
     margin: 100px 10px 10px 20px;
-    width: 500px;
+    width: 700px;
  }
 
 /* table */
 table {
+    table-layout: fixed;
     border-collapse: collapse;
+    width: 100%;
 }
 .tHead{
     border-bottom: 3px rgb(121, 120, 120) solid;
@@ -87,39 +89,48 @@ table {
 }
 
 th {
-
+text-align: center;
 padding: 15px 5px;
+word-wrap: break-word;
 }
 td {
     padding: 15px 5px;
     color: rgb(81, 81, 81);
+    text-align: center;
+    word-wrap: break-word;
 }
 .trBody{
     border-bottom: 2px rgb(121, 120, 120) solid;
 }
 
 .thNumber {
-    width: 10px;
+    width: 5%;
+    text-align: center;
 }
 
 .thLogin {
-    width: 150px;
+    width: 20%;
+    text-align: center;
     
 }
 
 .thPassword {
-    width: 250px;
+    width: 25%;
+    text-align: center;
 }
 
 .thEmail {
-    width: 250px;
+    width: 25%;
+    text-align: center;
 }
 
 .thEdit {
-    width: 100px;
+    width: 12.5%;
+    text-align: center;
 }
 .thDelete{
-    width: 120px;
+    width: 12.5%;
+    text-align: center;
 }
 
 
