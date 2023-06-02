@@ -21,6 +21,20 @@
         password: passwordInput.value,
         email: emailInput.value,
       };
+      
+      // Валідація полів форми
+      if (!validateLogin(loginInput.value)) {
+        alert('Invalid login');
+        return;
+      }
+      if (!validatePassword(passwordInput.value)) {
+        alert('Invalid password');
+        return;
+      }
+      if (!validateEmail(emailInput.value)) {
+        alert('Invalid email');
+        return;
+      }
 
       // Додавання користувача до масиву
       users.push(user);
@@ -29,6 +43,8 @@
       loginInput.value = '';
       passwordInput.value = '';
       emailInput.value = '';
+
+ 
 
       // Перегенерація таблиці
       renderTable();
