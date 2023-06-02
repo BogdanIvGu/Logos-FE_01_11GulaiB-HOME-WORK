@@ -14,20 +14,7 @@
       const passwordInput = document.querySelector('#password');
       const emailInput = document.querySelector('#email');
 
-      // Валідація полів форми
-      if (!validateLogin(loginInput.value)) {
-        alert('Invalid login');
-        return;
-      }
-      if (!validatePassword(passwordInput.value)) {
-        alert('Invalid password');
-        return;
-      }
-      if (!validateEmail(emailInput.value)) {
-        alert('Invalid email');
-        return;
-      }
-
+     
       // Створення об'єкта користувача
       const user = {
         login: loginInput.value,
