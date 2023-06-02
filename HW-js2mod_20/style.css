@@ -41,7 +41,7 @@ border: 2px rgb(4, 125, 136) solid;
 }
 
 /* addUser */
-.addUser{
+.addUser, .editUser{
     padding: 5px 10px;
     background-color: white;
     border-radius: 5px;
@@ -49,10 +49,12 @@ border: 2px rgb(4, 125, 136) solid;
     color: black;
     
 }
+.editUser:hover,
 .addUser:hover{
     border-color: green;
     color: green;
 }
+.editUser:active,
 .addUser:active{
     background-color: green;
     border-color: green;
@@ -61,26 +63,8 @@ border: 2px rgb(4, 125, 136) solid;
 }
 
 
-/* editUser */
-.editUser {
-    padding: 5px 10px;
-    background-color: white;
-    border-radius: 5px;
-    border-color: rgb(21, 105, 21);
-    color: black;
-}
 
-.editUser:hover {
-    border-color: green;
-    color: green;
-}
 
-.editUser:active {
-    background-color: green;
-    border-color: green;
-    color: white;
-    scale: 1.1;
-}
 
 /* приховання кнопки */
 .hidden {
