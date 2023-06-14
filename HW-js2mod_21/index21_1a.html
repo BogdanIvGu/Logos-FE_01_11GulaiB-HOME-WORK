@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .iphone14 {
+            position: absolute;
+            margin-top: 10px;
+        }
+
+        .screen {
+            position: relative;
+            z-index: -1;
+            top: 24px;
+            left: 20px;
+            bottom: 0;
+            width: 189px;
+            height: 390px;
+            background-size: cover;
+            background-color: rgb(33, 248, 0);
+            transform: rotateX(0deg) rotateY(0deg);
+            overflow: hidden;
+            transition: height 0.5s;
+        }
+
+        .timer {
+            position: absolute;
+            font-size: 100px;
+            top: 200px;
+            left: 50%;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            font-family: sans-serif;
+        }
+
+        .screen.animate {
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Таймер на 2 хвилини</h1>
+
+    <div class="iphone">
+        <img class="iphone14" src="./img/Mobile-with-hand-Mockup-png_jnb9x4.png" alt="iphone14" width="400px">
+        <!-- Вміст екрану смартфона -->
+        <div class="screen">
+            <div class="timer">2</div>
+        </div>
+    </div>
+
+    <script>
+        const screen = document.querySelector('.screen');
+        const timer = document.querySelector('.timer');
+
+        screen.addEventListener('click', function() {
+            screen.classList.add('animate');
+            timer.textContent = '1';
+
+            setTimeout(function() {
+                timer.textContent = '0';
+            }, 6000);
+        });
+
+        setInterval(function() {
+            const currentHeight = screen.offsetHeight;
+            const newHeight = currentHeight - (currentHeight / 120);
+            screen.style.height = newHeight + 'px';
+        }, 1000);
+    </script>
+</body>
+</html>

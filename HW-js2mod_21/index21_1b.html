@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        .iphone14 {
+            margin-top: 100px;
+        }
+        .iphone::after{
+           content: "2";
+    font-size: 200px;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 280px;
+    left: -77px;
+    width: 100%;
+    text-align: center;
+        }
+
+
+        .iphone {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .screen {
+            position: absolute;
+            z-index: -1;
+            bottom: 184px;
+            left: 16px;
+            width: 198px;
+            height: 387px;
+            background-color: rgb(33, 248, 0);
+            transition: height 60s;
+        }
+
+        .iphone:hover .screen {
+            height: 0%;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="iphone">
+        <img class="iphone14" src="./img/Mobile-with-hand-Mockup-png_jnb9x4.png" alt="iphone14" width="400px">
+        <!-- Вміст екрану смартфона -->
+        <div class="screen">
+        </div>
+    </div>
+</body>
+</html>
